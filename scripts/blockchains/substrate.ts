@@ -1,4 +1,4 @@
-import { App, DesktopApp, ExtensionApp, WebApp } from 'packages/beacon-types/src/types/ui'
+import { App, DesktopApp, ExtensionApp, WebApp } from 'packages/mavlet-types/src/types/ui'
 
 export const substrateExtensionList: ExtensionApp[] = []
 

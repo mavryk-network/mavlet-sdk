@@ -4,17 +4,17 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="Content-Style-Type" content="text/css" />
-    <title>Beacon Events</title>
+    <title>Mavlet Events</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css" />
 
     <script>
-      // This will enable the debug mode of beacon
+      // This will enable the debug mode of mavlet
       // This should only be used during development
-      window.beaconSdkDebugEnabled = true
+      window.mavletSdkDebugEnabled = true
     </script>
 
-    <script src="./walletbeacon.min.js"></script>
+    <script src="./walletmavlet.min.js"></script>
 
     <style>
       /* To test if our UI is affected by global styles */
@@ -29,13 +29,13 @@
   </head>
 
   <body>
-    Beacon Events
+    Mavlet Events
     <br /><br />
 
     <script>
       // Initiate DAppClient
-      const client = new beacon.DAppClient({
-        name: 'Beacon Events', // Name of the DApp,
+      const client = new mavlet.DAppClient({
+        name: 'Mavlet Events', // Name of the DApp,
         disclaimerText: 'This is an optional <b>disclaimer</b>.'
       })
 

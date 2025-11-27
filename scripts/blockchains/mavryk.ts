@@ -1,4 +1,4 @@
-import { App, DesktopApp, ExtensionApp, WebApp } from 'packages/beacon-types/src/types/ui'
+import { App, DesktopApp, ExtensionApp, WebApp } from 'packages/mavlet-types/src/types/ui'
 
 // TODO: Temporary build fix
 export enum NetworkType {
@@ -206,7 +206,7 @@ export const mavrykIosList: App[] = [
   //   shortName: 'Exodus',
   //   color: '',
   //   logo: 'exodus.svg',
-  //   supportedInteractionStandards: ['beacon'],
+  //   supportedInteractionStandards: ['mavlet'],
   //   deepLink: 'exodus://wc',
   //   universalLink: 'https://www.exodus.com/'
   // },

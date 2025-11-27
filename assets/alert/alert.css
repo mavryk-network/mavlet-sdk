@@ -34,7 +34,7 @@
   animation-name: fadeOut;
 }
 
-.beacon-modal__wrapper {
+.mavlet-modal__wrapper {
   position: relative;
   top: 0;
   display: inline-block;
@@ -44,28 +44,28 @@
   padding: 24px;
 }
 
-.theme__light .beacon-modal__base,
-.theme__light .beacon-modal__close__wrapper {
+.theme__light .mavlet-modal__base,
+.theme__light .mavlet-modal__close__wrapper {
   background: #fff;
 }
 
-.theme__dark .beacon-modal__base,
-.theme__dark .beacon-modal__close__wrapper {
+.theme__dark .mavlet-modal__base,
+.theme__dark .mavlet-modal__close__wrapper {
   background: #27334c;
 }
 
-.beacon-modal__base,
-.beacon-modal__close__wrapper {
+.mavlet-modal__base,
+.mavlet-modal__close__wrapper {
   box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.1);
 }
 
-.beacon-modal__base {
+.mavlet-modal__base {
   margin: 0 auto;
   border-radius: 32px;
   overflow: hidden;
 }
 
-.beacon-modal__header {
+.mavlet-modal__header {
   padding: 16px 0;
   width: 100%;
   display: flex;
@@ -74,7 +74,7 @@
   align-items: center;
 }
 
-.beacon-modal__headerLogo {
+.mavlet-modal__headerLogo {
   width: 100%;
   max-width: 320px;
   margin: 20px auto;
@@ -86,7 +86,7 @@ button {
   cursor: pointer;
 }
 
-.beacon-modal__close__wrapper {
+.mavlet-modal__close__wrapper {
   position: absolute;
   top: 44px;
   right: 24px;
@@ -95,7 +95,7 @@ button {
   border-radius: 100%;
 }
 
-.beacon-modal__close__icon {
+.mavlet-modal__close__icon {
   width: 16px;
   height: 16px;
   position: relative;
@@ -108,28 +108,28 @@ button {
   margin: 8px;
 }
 
-.beacon-modal__close__line1 {
+.mavlet-modal__close__line1 {
   position: absolute;
   width: 90%;
 }
 
-.beacon-modal__close__line2 {
+.mavlet-modal__close__line2 {
   position: absolute;
   width: 90%;
   transform: rotate(90deg);
 }
 
-.theme__light .beacon-modal__close__line2,
-.theme__light .beacon-modal__close__line1 {
+.theme__light .mavlet-modal__close__line2,
+.theme__light .mavlet-modal__close__line1 {
   border: 1px solid #000;
 }
 
-.theme__dark .beacon-modal__close__line2,
-.theme__dark .beacon-modal__close__line1 {
+.theme__dark .mavlet-modal__close__line2,
+.theme__dark .mavlet-modal__close__line1 {
   border: 1px solid #fff;
 }
 
-.beacon-alert__base {
+.mavlet-alert__base {
   position: fixed;
   overflow-y: scroll;
   top: 0;
@@ -144,16 +144,16 @@ button {
   font-family: Roboto, Helvetica, sans-serif;
 }
 
-.beacon-alert__base::-webkit-scrollbar {
+.mavlet-alert__base::-webkit-scrollbar {
   display: none;
 }
 
-.beacon-alert__title {
+.mavlet-alert__title {
   text-align: center;
 }
 
-.beacon-alert__text,
-.beacon-alert__title {
+.mavlet-alert__text,
+.mavlet-alert__title {
   margin: 0 auto;
   padding: 0 0 24px;
 }
@@ -162,26 +162,26 @@ button {
   margin-bottom: 16px;
 }
 
-.beacon-alert__title {
+.mavlet-alert__title {
   font-size: 18px;
 }
 
-.theme__light .beacon-alert__title {
+.theme__light .mavlet-alert__title {
   color: #3b3d40;
 }
 
-.theme__dark .beacon-alert__title,
-.theme__dark .beacon-alert__text {
+.theme__dark .mavlet-alert__title,
+.theme__dark .mavlet-alert__text {
   color: #7c99d6;
 }
 
-.beacon-alert__text {
+.mavlet-alert__text {
   color: #000;
   font-size: 14px;
 }
 
-.beacon-modal__button,
-.beacon-modal__button--outline {
+.mavlet-modal__button,
+.mavlet-modal__button--outline {
   height: 36px;
   font-size: 14px;
   letter-spacing: 0.84px;
@@ -202,18 +202,18 @@ button {
   border: 2px solid #3880ff;
 }
 
-.beacon-modal__button {
+.mavlet-modal__button {
   background: #3880ff;
   color: #fff;
 }
 
-.beacon-modal__button--outline {
+.mavlet-modal__button--outline {
   background: #fff;
   color: #444444;
   border: 1px solid #444444;
 }
 
-.beacon-alert__image {
+.mavlet-alert__image {
   width: 200px;
   height: 200px;
   box-sizing: border-box;
@@ -226,15 +226,15 @@ button {
   width: 100%;
 }
 
-#beacon-modal__content {
+#mavlet-modal__content {
   padding: 24px;
 }
 
-#beacon-switch {
+#mavlet-switch {
   margin-top: 24px;
 }
 
-#beacon-title {
+#mavlet-title {
   margin: 0 0 24px;
 }
 

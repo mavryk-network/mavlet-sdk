@@ -4,7 +4,7 @@ const webpack = require('webpack')
 module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
-    library: 'beacon',
+    library: 'mavlet',
     libraryTarget: 'umd'
   },
   resolve: {

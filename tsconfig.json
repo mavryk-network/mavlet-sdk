@@ -27,31 +27,31 @@
     "allowSyntheticDefaultImports": true
   },
   "paths": {
-    "beacon-core": ["packages/beacon-core/lib/beacon-core", "packages/beacon-core/lib"],
-    "beacon-dapp": ["packages/beacon-dapp/lib/beacon-dapp", "packages/beacon-dapp/lib"],
-    "beacon-blockchain-substrate": [
-      "packages/beacon-blockchain-substrate/lib/beacon-blockchain-substrate",
-      "packages/beacon-blockchain-substrate/lib"
+    "mavlet-core": ["packages/mavlet-core/lib/mavlet-core", "packages/mavlet-core/lib"],
+    "mavlet-dapp": ["packages/mavlet-dapp/lib/mavlet-dapp", "packages/mavlet-dapp/lib"],
+    "mavlet-blockchain-substrate": [
+      "packages/mavlet-blockchain-substrate/lib/mavlet-blockchain-substrate",
+      "packages/mavlet-blockchain-substrate/lib"
     ],
-    "beacon-blockchain-mavryk": [
-      "packages/beacon-blockchain-mavryk/lib/beacon-blockchain-mavryk",
-      "packages/beacon-blockchain-mavryk/lib"
+    "mavlet-blockchain-mavryk": [
+      "packages/mavlet-blockchain-mavryk/lib/mavlet-blockchain-mavryk",
+      "packages/mavlet-blockchain-mavryk/lib"
     ],
-    "beacon-blockchain-mavryk-sapling": [
-      "packages/beacon-blockchain-mavryk-sapling/lib/beacon-blockchain-mavryk-sapling",
-      "packages/beacon-blockchain-mavryk-sapling/lib"
+    "mavlet-blockchain-mavryk-sapling": [
+      "packages/mavlet-blockchain-mavryk-sapling/lib/mavlet-blockchain-mavryk-sapling",
+      "packages/mavlet-blockchain-mavryk-sapling/lib"
     ],
-    "beacon-transport-matrix": [
-      "packages/beacon-transport-matrix/lib/beacon-transport-matrix",
-      "packages/beacon-transport-matrix/lib"
+    "mavlet-transport-matrix": [
+      "packages/mavlet-transport-matrix/lib/mavlet-transport-matrix",
+      "packages/mavlet-transport-matrix/lib"
     ],
-    "beacon-transport-postmessage": [
-      "packages/beacon-transport-postmessage/lib/beacon-transport-postmessage",
-      "packages/beacon-transport-postmessage/lib"
+    "mavlet-transport-postmessage": [
+      "packages/mavlet-transport-postmessage/lib/mavlet-transport-postmessage",
+      "packages/mavlet-transport-postmessage/lib"
     ],
-    "beacon-types": ["packages/beacon-types/lib/beacon-types", "packages/beacon-types/lib"],
-    "beacon-ui": ["packages/beacon-ui/lib/beacon-ui", "packages/beacon-ui/lib"],
-    "beacon-utils": ["packages/beacon-utils/lib/beacon-utils", "packages/beacon-utils/lib"],
-    "beacon-wallet": ["packages/beacon-wallet/lib/beacon-wallet", "packages/beacon-wallet/lib"]
+    "mavlet-types": ["packages/mavlet-types/lib/mavlet-types", "packages/mavlet-types/lib"],
+    "mavlet-ui": ["packages/mavlet-ui/lib/mavlet-ui", "packages/mavlet-ui/lib"],
+    "mavlet-utils": ["packages/mavlet-utils/lib/mavlet-utils", "packages/mavlet-utils/lib"],
+    "mavlet-wallet": ["packages/mavlet-wallet/lib/mavlet-wallet", "packages/mavlet-wallet/lib"]
   }
 }

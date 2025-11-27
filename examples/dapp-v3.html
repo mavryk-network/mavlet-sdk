@@ -4,14 +4,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="Content-Style-Type" content="text/css" />
-    <title>Beacon Example DApp</title>
+    <title>Mavlet Example DApp</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css" />
 
     <script>
-      // This will enable the debug mode of beacon
+      // This will enable the debug mode of mavlet
       // This should only be used during development
-      window.beaconSdkDebugEnabled = true
+      window.mavletSdkDebugEnabled = true
     </script>
 
     <script
@@ -26,7 +26,7 @@
       })
     </script>
 
-    <script src="./walletbeacon.min.js"></script>
+    <script src="./walletmavlet.min.js"></script>
 
     <style>
       /* To test if our UI is affected by global styles */
@@ -41,7 +41,7 @@
   </head>
 
   <body>
-    Beacon Example
+    Mavlet Example
     <br /><br />
     <span>
       Active account:
@@ -109,7 +109,7 @@
     <br /><br />
     <button id="contractCall">Contract Call</button>
     <br /><br />
-    <textarea id="beacon-textbox"></textarea>
+    <textarea id="mavlet-textbox"></textarea>
     <button id="deserializeData">Deserialize Data</button>
     <br /><br />
     ---
@@ -120,7 +120,7 @@
 
     <script>
       // Initiate DAppClient
-      const client = new beacon.DAppClient({
+      const client = new mavlet.DAppClient({
         name: 'Example DApp', // Name of the DApp,
         disclaimerText: 'This is an optional <b>disclaimer</b>.',
         appUrl: 'http://localhost:8080',
@@ -128,14 +128,14 @@
           projectId: '97f804b46f0db632c52af0556586a5f3',
           relayUrl: 'wss://relay.walletconnect.com'
         }
-        // preferredNetwork: beacon.NetworkType.ATLASNET
+        // preferredNetwork: mavlet.NetworkType.ATLASNET
         // matrixNodes: ['test.papers.tech', 'test2.papers.tech', 'matrix.papers.tech']
-        // matrixNodes: ['beacon-node-0.papers.tech:8448']
+        // matrixNodes: ['mavlet-node-0.papers.tech:8448']
         // matrixNodes: ['matrix.papers.tech']
-        // matrixNodes: ['beacon.tztip.me']
+        // matrixNodes: ['mavlet.tztip.me']
       })
 
-      const substrateBlockchain = new beacon.SubstrateBlockchain()
+      const substrateBlockchain = new mavlet.SubstrateBlockchain()
       client.addBlockchain(substrateBlockchain)
 
       // Display the active account in the UI
@@ -167,7 +167,7 @@
         client.requestOperation({
           operationDetails: [
             {
-              kind: beacon.MavrykOperationType.DELEGATION,
+              kind: mavlet.MavrykOperationType.DELEGATION,
               delegate: 'mv1Qvep3UVZdGTV6cMQ9MHGexLNQ6oaNZmhj'
             }
           ]
@@ -222,7 +222,7 @@
           })
 
         // client
-        //   .requestPermissions(/*{ network: { type: beacon.NetworkType.ATLASNET } }*/)
+        //   .requestPermissions(/*{ network: { type: mavlet.NetworkType.ATLASNET } }*/)
         //   .then((permissions) => {
         //     console.log('permissions', permissions)
         //     if (callback) {
@@ -276,8 +276,8 @@
       // Add event listener to the button
       document.getElementById('encryptPayload').addEventListener('click', async () => {
         const encryptionResponse = await client.requestEncryptPayload({
-          encryptionType: beacon.EncryptionType.ASYMMETRIC,
-          encryptionCryptoOperation: beacon.EncryptionOperation.ENCRYPT,
+          encryptionType: mavlet.EncryptionType.ASYMMETRIC,
+          encryptionCryptoOperation: mavlet.EncryptionOperation.ENCRYPT,
           payload: 'my-secret-string'
         })
 
@@ -286,8 +286,8 @@
         await new Promise((resolve) => setTimeout(resolve, 2000))
 
         const decryptionResponse = await client.requestEncryptPayload({
-          encryptionType: beacon.EncryptionType.ASYMMETRIC,
-          encryptionCryptoOperation: beacon.EncryptionOperation.DECRYPT,
+          encryptionType: mavlet.EncryptionType.ASYMMETRIC,
+          encryptionCryptoOperation: mavlet.EncryptionOperation.DECRYPT,
           payload: encryptionResponse.payload
         })
 
@@ -297,7 +297,7 @@
       // Add event listener to the button
       document.getElementById('signPayloadOperation').addEventListener('click', async () => {
         const signature = await client.requestSignPayload({
-          signingType: beacon.SigningType.OPERATION,
+          signingType: mavlet.SigningType.OPERATION,
           payload: '03test'
         })
 
@@ -307,7 +307,7 @@
       // Add event listener to the button
       document.getElementById('signPayloadMicheline').addEventListener('click', async () => {
         const signature = await client.requestSignPayload({
-          signingType: beacon.SigningType.MICHELINE,
+          signingType: mavlet.SigningType.MICHELINE,
           payload:
             '05010000004254657a6f73205369676e6564204d6573736167653a206d79646170702e636f6d20323032312d30312d31345431353a31363a30345a2048656c6c6f20776f726c6421'
         })
@@ -324,7 +324,7 @@
 
       // Add event listener to the button
       document.getElementById('getExtensions').addEventListener('click', () => {
-        beacon.availableTransports.availableExtensions.then((extensions) => {
+        mavlet.availableTransports.availableExtensions.then((extensions) => {
           console.log(extensions)
           alert(
             `There are ${extensions.length} extensions installed. Check the console for more info.`
@@ -401,7 +401,7 @@
           .requestOperation({
             operationDetails: [
               {
-                kind: beacon.MavrykOperationType.TRANSACTION,
+                kind: mavlet.MavrykOperationType.TRANSACTION,
                 amount: '0',
                 destination: 'KT1RxKJyi48W3bZR8HErRiisXZQw19HwLGWj',
                 parameters: {
@@ -460,9 +460,9 @@
 
       // Add event listener to the button
       document.getElementById('deserializeData').addEventListener('click', () => {
-        const value = document.getElementById('beacon-textbox').value
+        const value = document.getElementById('mavlet-textbox').value
         console.log('Deserializing:', value)
-        new beacon.Serializer().deserialize(value).then(console.log).catch(console.error)
+        new mavlet.Serializer().deserialize(value).then(console.log).catch(console.error)
       })
     </script>
   </body>

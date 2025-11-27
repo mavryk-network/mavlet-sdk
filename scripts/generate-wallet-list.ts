@@ -7,7 +7,7 @@ import {
   App,
   AppBase,
   DesktopApp
-} from '../packages/beacon-types/src/types/ui'
+} from '../packages/mavlet-types/src/types/ui'
 
 import {
   substrateExtensionList,
@@ -76,7 +76,7 @@ const generateForBlockchains = (
     const webListWithInlinedLogo = await convert(webList)
     const iosListWithInlinedLogo = await convert(iosList)
 
-    let out = `import { App, DesktopApp, ExtensionApp, WebApp } from '@mavrykdynamics/beacon-types'`
+    let out = `import { App, DesktopApp, ExtensionApp, WebApp } from '@mavrykdynamics/mavlet-types'`
     out += `
   
   `
@@ -154,7 +154,7 @@ const generateForBlockchains = (
 }
 
 generateForBlockchains(
-  'beacon-blockchain-mavryk',
+  'mavlet-blockchain-mavryk',
   mavrykExtensionList,
   mavrykDesktopList,
   mavrykWebList,
@@ -162,7 +162,7 @@ generateForBlockchains(
 )
 
 generateForBlockchains(
-  'beacon-blockchain-mavryk-sapling',
+  'mavlet-blockchain-mavryk-sapling',
   mavrykSaplingExtensionList,
   mavrykSaplingDesktopList,
   mavrykSaplingWebList,
@@ -170,7 +170,7 @@ generateForBlockchains(
 )
 
 generateForBlockchains(
-  'beacon-blockchain-substrate',
+  'mavlet-blockchain-substrate',
   substrateExtensionList,
   substrateDesktopList,
   substrateWebList,
@@ -178,7 +178,7 @@ generateForBlockchains(
 )
 
 generateForBlockchains(
-  'beacon-ui',
+  'mavlet-ui',
   mavrykExtensionList,
   mavrykDesktopList,
   mavrykWebList,

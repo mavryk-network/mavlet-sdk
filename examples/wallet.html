@@ -4,14 +4,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="Content-Style-Type" content="text/css" />
-    <title>Beacon Example Wallet</title>
+    <title>Mavlet Example Wallet</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css" />
 
     <script>
-      // This will enable the debug mode of beacon
+      // This will enable the debug mode of mavlet
       // This should only be used during development
-      window.beaconSdkDebugEnabled = true
+      window.mavletSdkDebugEnabled = true
     </script>
 
     <script
@@ -26,11 +26,11 @@
       })
     </script>
 
-    <script src="./walletbeacon.min.js"></script>
+    <script src="./walletmavlet.min.js"></script>
   </head>
 
   <body>
-    Beacon Example Wallet
+    Mavlet Example Wallet
     <br /><br />
     <div id="status"></div>
     <br /><br />
@@ -49,23 +49,23 @@
 
     <script>
       // Initiate DAppClient
-      const client = new beacon.WalletClient({
+      const client = new mavlet.WalletClient({
         name: 'Example Wallet' // Name of the DApp
         // matrixNodes: {
-        //   [beacon.Regions.EUROPE_WEST]: [
-        //     'beacon-node-1.diamond.papers.tech',
-        //     'beacon-node-1.sky.papers.tech',
-        //     'beacon-node-2.sky.papers.tech',
-        //     'beacon-node-1.hope.papers.tech',
-        //     'beacon-node-1.hope-2.papers.tech',
-        //     'beacon-node-1.hope-3.papers.tech',
-        //     'beacon-node-1.hope-4.papers.tech',
-        //     'beacon-node-1.hope-5.papers.tech'
+        //   [mavlet.Regions.EUROPE_WEST]: [
+        //     'mavlet-node-1.diamond.papers.tech',
+        //     'mavlet-node-1.sky.papers.tech',
+        //     'mavlet-node-2.sky.papers.tech',
+        //     'mavlet-node-1.hope.papers.tech',
+        //     'mavlet-node-1.hope-2.papers.tech',
+        //     'mavlet-node-1.hope-3.papers.tech',
+        //     'mavlet-node-1.hope-4.papers.tech',
+        //     'mavlet-node-1.hope-5.papers.tech'
         //   ],
-        //   [beacon.Regions.NORTH_AMERICA_EAST]: []
+        //   [mavlet.Regions.NORTH_AMERICA_EAST]: []
         // }
-        // matrixNodes: ['beacon-node-0.papers.tech:8448']
-        // matrixNodes: ['beacon.tztip.me']
+        // matrixNodes: ['mavlet-node-0.papers.tech:8448']
+        // matrixNodes: ['mavlet.tztip.me']
       })
 
       const setStatus = (status) => {
@@ -75,7 +75,7 @@
       // Add event listener to the button
       document.getElementById('paste').addEventListener('click', () => {
         const addPeer = (text) => {
-          const serializer = new beacon.Serializer()
+          const serializer = new mavlet.Serializer()
           serializer
             .deserialize(text)
             .then((peer) => {
@@ -109,10 +109,10 @@
 
             console.log('message', message)
             // Example: Handle PermissionRequest. A wallet should handle all request types
-            if (message.type === beacon.BeaconMessageType.PermissionRequest) {
+            if (message.type === mavlet.MavletMessageType.PermissionRequest) {
               // Show a UI to the user where he can confirm sharing an account with the DApp
 
-              // const URL = 'https://beacon-notification-oracle.dev.gke.papers.tech'
+              // const URL = 'https://mavlet-notification-oracle.dev.gke.papers.tech'
               const publicKey = '3b92229274683b338cf8b040cf91ac0f8e19e410f06eda5537ef077e718e0026'
 
               // const res = await client.registerPush(
@@ -126,12 +126,12 @@
               // console.log('res', res)
 
               const response = {
-                type: beacon.BeaconMessageType.PermissionResponse,
+                type: mavlet.MavletMessageType.PermissionResponse,
                 network: message.network, // Use the same network that the user requested
                 scopes: [
-                  beacon.PermissionScope.OPERATION_REQUEST,
-                  beacon.PermissionScope.NOTIFICATION,
-                  beacon.PermissionScope.ENCRYPT
+                  mavlet.PermissionScope.OPERATION_REQUEST,
+                  mavlet.PermissionScope.NOTIFICATION,
+                  mavlet.PermissionScope.ENCRYPT
                 ], // Ignore the scopes that have been requested and instead give only operation permissions
                 id: message.id,
                 publicKey: publicKey
@@ -153,9 +153,9 @@
               console.error('Received: ', message)
 
               const response = {
-                type: beacon.BeaconMessageType.Error,
+                type: mavlet.MavletMessageType.Error,
                 id: message.id,
-                errorType: beacon.BeaconErrorType.ABORTED_ERROR
+                errorType: mavlet.MavletErrorType.ABORTED_ERROR
               }
               client.respond(response)
             }

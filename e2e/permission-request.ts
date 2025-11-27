@@ -2,12 +2,12 @@ var StaticServer = require('static-server')
 var server1 = new StaticServer({
   rootPath: './examples/', // required, the root of the server file tree
   port: 8080, // required, the port to listen
-  name: 'beacon' // optional, will set "X-Powered-by" HTTP header
+  name: 'mavlet' // optional, will set "X-Powered-by" HTTP header
 })
 var server2 = new StaticServer({
   rootPath: './examples/', // required, the root of the server file tree
   port: 8081, // required, the port to listen
-  name: 'beacon' // optional, will set "X-Powered-by" HTTP header
+  name: 'mavlet' // optional, will set "X-Powered-by" HTTP header
 })
 server1.start(function () {
   console.log('Server1 listening to', server1.port)
@@ -42,7 +42,7 @@ const PuppeteerMassScreenshots = require('puppeteer-mass-screenshots')
 const dAppURL = 'http://localhost:8080/dapp.html'
 const walletURL = 'http://localhost:8081/wallet.html'
 
-type BeaconPages = { dapp: puppeteer.Page; wallet: puppeteer.Page }
+type MavletPages = { dapp: puppeteer.Page; wallet: puppeteer.Page }
 
 const sleep = async (time: number) => {
   return new Promise((resolve) => setTimeout(resolve, time))
@@ -60,7 +60,7 @@ const createPage = async (browser: puppeteer.Browser, url: string) => {
   return page
 }
 
-const takeScreenshots = async (pages: BeaconPages, name: string) => {
+const takeScreenshots = async (pages: MavletPages, name: string) => {
   console.log('SCREENSHOT', name)
   const id = '' // Math.random().toString()
   await pages.dapp.screenshot({ path: `./e2e/output/screenshot-${name}-${id}-dapp.png` })
@@ -79,7 +79,7 @@ const rune2e = async () => {
 
   console.log('started')
 
-  const pages: BeaconPages = {
+  const pages: MavletPages = {
     dapp: await createPage(browser, dAppURL),
     wallet: await createPage(browser, walletURL)
   }
@@ -105,7 +105,7 @@ const rune2e = async () => {
   ) // declare promise
   const desktopWallet = (
     await pages.dapp.evaluateHandle(
-      `document.querySelector("[id^='beacon-alert-wrapper']").shadowRoot.querySelector("#wallet_kukai_web")`
+      `document.querySelector("[id^='mavlet-alert-wrapper']").shadowRoot.querySelector("#wallet_kukai_web")`
     )
   ).asElement()
   if (desktopWallet) {

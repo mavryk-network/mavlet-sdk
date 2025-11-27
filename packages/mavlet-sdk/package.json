@@ -1,0 +1,49 @@
+{
+  "name": "@mavrykdynamics/mavlet-sdk",
+  "version": "4.2.2",
+  "description": "The `mavlet-sdk` simplifies and abstracts the communication between dApps and wallets over different transport layers.",
+  "author": "Andreas Gassmann <a.gassmann@papers.ch>",
+  "homepage": "https://walletmavlet.io",
+  "license": "ISC",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "unpkg": "dist/walletmavlet.min.js",
+  "types": "dist/esm/index.d.ts",
+  "exports": {
+    "require": "./dist/cjs/index.js",
+    "import": "./dist/esm/index.js"
+  },
+  "directories": {
+    "lib": "dist/esm",
+    "test": "__tests__"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mavryk-network/mavlet-sdk.git"
+  },
+  "scripts": {
+    "tsc": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
+    "test": "TS_NODE_PROJECT='tsconfig-cjs.json' nyc mocha --require ts-node/register --require source-map-support/register --full-trace --timeout 40000 ./__tests__/**/**.spec.ts"
+  },
+  "bugs": {
+    "url": "https://github.com/mavryk-network/mavlet-sdk/issues"
+  },
+  "dependencies": {
+    "@mavrykdynamics/mavlet-blockchain-substrate": "^4.2.2",
+    "@mavrykdynamics/mavlet-blockchain-mavryk": "^4.2.2",
+    "@mavrykdynamics/mavlet-core": "^4.2.2",
+    "@mavrykdynamics/mavlet-dapp": "^4.2.2",
+    "@mavrykdynamics/mavlet-transport-matrix": "^4.2.2",
+    "@mavrykdynamics/mavlet-transport-postmessage": "^4.2.2",
+    "@mavrykdynamics/mavlet-types": "^4.2.2",
+    "@mavrykdynamics/mavlet-ui": "^4.2.2",
+    "@mavrykdynamics/mavlet-utils": "^4.2.2",
+    "@mavrykdynamics/mavlet-wallet": "^4.2.2"
+  }
+}

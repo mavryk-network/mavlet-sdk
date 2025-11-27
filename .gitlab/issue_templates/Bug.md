@@ -43,4 +43,4 @@ logs, and code as it's tough to read otherwise. --->
 
 <!--- these standard labels will be added to this issue>--->
 
-/label ~"type::bug" ~"proj::mavryk" ~"proj::beacon"
+/label ~"type::bug" ~"proj::mavryk" ~"proj::mavlet"

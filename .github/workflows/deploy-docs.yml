@@ -31,10 +31,10 @@ jobs:
         run: |
           npm run typedoc
           cd docs
-          echo 'beacon.mavryk.org' > CNAME
+          echo 'mavlet.mavryk.org' > CNAME
           git config --global user.email "support+actions@github.com"
           git config --global user.name "github-actions-bot"
           git init
           git add -A
           git commit -m 'chore(docs): including latest changes'
-          git push -f https://git:${GITHUB_TOKEN}@github.com/mavryk-network/beacon-sdk.git master:gh-pages
+          git push -f https://git:${GITHUB_TOKEN}@github.com/mavryk-network/mavlet-sdk.git master:gh-pages
