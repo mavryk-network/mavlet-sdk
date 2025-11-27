@@ -58,7 +58,10 @@
     "bump:patch": "lerna version --no-git-tag-version patch --exact --yes",
     "bump:beta": "lerna version --no-git-tag-version prerelease --preid beta --exact --yes"
   },
-  "author": "Papers AG <contact@papers.ch> (https://papers.ch)",
+  "author": "Mavryk Dynamics (https://mavryk.org)",
+  "contributors": [
+    "Papers AG <contact@papers.ch> (https://papers.ch)"
+  ],
   "dependencies": {
     "@mavrykdynamics/mavlet-blockchain-substrate": "file:packages/mavlet-blockchain-substrate",
     "@mavrykdynamics/mavlet-blockchain-mavryk": "file:packages/mavlet-blockchain-mavryk",

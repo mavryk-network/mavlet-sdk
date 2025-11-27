@@ -1,5 +1,5 @@
-export const SDK_VERSION: string = '4.2.2'
-export const MAVLET_VERSION: string = '3'
+export const SDK_VERSION: string = '1.0.0'
+export const MAVLET_VERSION: string = '3' // Following Beacon versionning
 
 export const NOTIFICATION_ORACLE_URL: string =
-  'https://mavlet-notification-oracle.dev.gke.papers.tech'
+  'https://beacon-notification-oracle.dev.gke.papers.tech'

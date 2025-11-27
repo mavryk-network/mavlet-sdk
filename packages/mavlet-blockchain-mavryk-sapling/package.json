@@ -1,10 +1,13 @@
 {
   "name": "@mavrykdynamics/mavlet-blockchain-mavryk-sapling",
-  "version": "4.2.2",
+  "version": "1.0.0",
   "description": "This package adds support for `mavryk-sapling`, the sapling integration on the Mavryk blockchain. It can be used in combination with the `@mavrykdynamics/mavlet-dapp` or `@mavrykdynamics/mavlet-wallet` packages.",
-  "author": "Andreas Gassmann <a.gassmann@papers.ch>",
+  "author": "Mavryk Dynamics (https://mavryk.org)",
+  "contributors": [
+    "Andreas Gassmann <a.gassmann@papers.ch> (Papers AG)"
+  ],
   "homepage": "https://walletmavlet.io",
-  "license": "ISC",
+  "license": "MIT",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
@@ -34,7 +37,7 @@
     "url": "https://github.com/mavryk-network/mavlet-sdk/issues"
   },
   "dependencies": {
-    "@mavrykdynamics/mavlet-types": "^4.2.2",
-    "@mavrykdynamics/mavlet-ui": "^4.2.2"
+    "@mavrykdynamics/mavlet-types": "^1.0.0",
+    "@mavrykdynamics/mavlet-ui": "^1.0.0"
   }
 }

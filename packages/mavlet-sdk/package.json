@@ -1,10 +1,13 @@
 {
   "name": "@mavrykdynamics/mavlet-sdk",
-  "version": "4.2.2",
+  "version": "1.0.0",
   "description": "The `mavlet-sdk` simplifies and abstracts the communication between dApps and wallets over different transport layers.",
-  "author": "Andreas Gassmann <a.gassmann@papers.ch>",
+  "author": "Mavryk Dynamics (https://mavryk.org)",
+  "contributors": [
+    "Andreas Gassmann <a.gassmann@papers.ch> (Papers AG)"
+  ],
   "homepage": "https://walletmavlet.io",
-  "license": "ISC",
+  "license": "MIT",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "unpkg": "dist/walletmavlet.min.js",
@@ -35,15 +38,15 @@
     "url": "https://github.com/mavryk-network/mavlet-sdk/issues"
   },
   "dependencies": {
-    "@mavrykdynamics/mavlet-blockchain-substrate": "^4.2.2",
-    "@mavrykdynamics/mavlet-blockchain-mavryk": "^4.2.2",
-    "@mavrykdynamics/mavlet-core": "^4.2.2",
-    "@mavrykdynamics/mavlet-dapp": "^4.2.2",
-    "@mavrykdynamics/mavlet-transport-matrix": "^4.2.2",
-    "@mavrykdynamics/mavlet-transport-postmessage": "^4.2.2",
-    "@mavrykdynamics/mavlet-types": "^4.2.2",
-    "@mavrykdynamics/mavlet-ui": "^4.2.2",
-    "@mavrykdynamics/mavlet-utils": "^4.2.2",
-    "@mavrykdynamics/mavlet-wallet": "^4.2.2"
+    "@mavrykdynamics/mavlet-blockchain-substrate": "^1.0.0",
+    "@mavrykdynamics/mavlet-blockchain-mavryk": "^1.0.0",
+    "@mavrykdynamics/mavlet-core": "^1.0.0",
+    "@mavrykdynamics/mavlet-dapp": "^1.0.0",
+    "@mavrykdynamics/mavlet-transport-matrix": "^1.0.0",
+    "@mavrykdynamics/mavlet-transport-postmessage": "^1.0.0",
+    "@mavrykdynamics/mavlet-types": "^1.0.0",
+    "@mavrykdynamics/mavlet-ui": "^1.0.0",
+    "@mavrykdynamics/mavlet-utils": "^1.0.0",
+    "@mavrykdynamics/mavlet-wallet": "^1.0.0"
   }
 }

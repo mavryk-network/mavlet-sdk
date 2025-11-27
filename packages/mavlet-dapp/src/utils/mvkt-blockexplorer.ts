@@ -6,7 +6,7 @@ export class MvktBlockExplorer extends BlockExplorer {
     public readonly rpcUrls: { [key in NetworkType]: string } = {
       [NetworkType.MAINNET]: 'https://api.mavryk.network',
       [NetworkType.BASENET]: 'https://basenet.api.mavryk.network',
-      [NetworkType.WEEKLYNET]: 'https://weeklynet.mvkt.io',
+      [NetworkType.WEEKLYNET]: 'https://weeklynet.api.mavryk.network',
       [NetworkType.DAILYNET]: 'https://dailynet.api.mavryk.network',
       [NetworkType.ATLASNET]: 'https://atlasnet.api.mavryk.network',
       [NetworkType.BOREASNET]: 'https://boreasnet.api.mavryk.network',

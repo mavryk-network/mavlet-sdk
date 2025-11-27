@@ -148,7 +148,7 @@ const getSync = () => {
                       kind: 'event_match',
                       key: 'state_key',
                       pattern:
-                        '@632392b258880b3a108035a4c847127544112102c5a0ffb07d459788f6f4be0e:mavlet-node-0.papers.tech:8448'
+                        '@632392b258880b3a108035a4c847127544112102c5a0ffb07d459788f6f4be0e:beacon-node-0.papers.tech:8448'
                     }
                   ],
                   actions: [
@@ -223,23 +223,23 @@ const getSync = () => {
 }
 
 mock
-  .onGet('https://mavlet-node-1.sky.papers.tech/_matrix/client/versions')
+  .onGet('https://beacon-node-1.sky.papers.tech/_matrix/client/versions')
   .reply(200, getVersionReply())
-  .onGet('https://mavlet-node-2.sky.papers.tech/_matrix/client/versions')
+  .onGet('https://beacon-node-2.sky.papers.tech/_matrix/client/versions')
   .reply(200, getVersionReply())
-  .onGet('https://mavlet-node-0.papers.tech:8448/_matrix/client/versions')
+  .onGet('https://beacon-node-0.papers.tech:8448/_matrix/client/versions')
   .reply(200, getVersionReply())
-  .onPost('https://mavlet-node-1.sky.papers.tech/_matrix/client/r0/login')
-  .reply(200, getLogin('mavlet-node-1.sky.papers.tech'))
-  .onPost('https://mavlet-node-2.sky.papers.tech/_matrix/client/r0/login')
-  .reply(200, getLogin('mavlet-node-2.sky.papers.tech'))
-  .onPost('https://mavlet-node-0.papers.tech:8448/_matrix/client/r0/login')
-  .reply(200, getLogin('mavlet-node-0.papers.tech:8448'))
-  .onGet('https://mavlet-node-1.sky.papers.tech/_matrix/client/r0/sync')
+  .onPost('https://beacon-node-1.sky.papers.tech/_matrix/client/r0/login')
+  .reply(200, getLogin('beacon-node-1.sky.papers.tech'))
+  .onPost('https://beacon-node-2.sky.papers.tech/_matrix/client/r0/login')
+  .reply(200, getLogin('beacon-node-2.sky.papers.tech'))
+  .onPost('https://beacon-node-0.papers.tech:8448/_matrix/client/r0/login')
+  .reply(200, getLogin('beacon-node-0.papers.tech:8448'))
+  .onGet('https://beacon-node-1.sky.papers.tech/_matrix/client/r0/sync')
   .reply(200, getSync())
-  .onGet('https://mavlet-node-2.sky.papers.tech/_matrix/client/r0/sync')
+  .onGet('https://beacon-node-2.sky.papers.tech/_matrix/client/r0/sync')
   .reply(200, getSync())
-  .onGet('https://mavlet-node-0.papers.tech:8448/_matrix/client/r0/sync')
+  .onGet('https://beacon-node-0.papers.tech:8448/_matrix/client/r0/sync')
   .reply(200, getSync())
   .onAny()
   .reply((config: any) => {

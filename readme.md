@@ -14,7 +14,7 @@
 
 The `mavlet-sdk` simplifies and abstracts the communication between dApps and wallets over different transport layers.
 
-Developers that plan to develop complex smart contract interactions can use [Taquito](https://github.com/mavryk-network/mavryk-taquito) with the `MavletWallet`, which uses this SDK under the hood, but provides helpful methods to interact with contracts.
+Developers that plan to develop complex smart contract interactions can use [WebMavryk](https://github.com/mavryk-network/webmavryk) with the `MavletWallet`, which uses this SDK under the hood, but provides helpful methods to interact with contracts.
 
 Besides this Typescript SDK, we also provide SDKs for native iOS and Android Wallets:
 
@@ -99,3 +99,7 @@ $ npm run test
 ```
 
 Once the SDK is built, you can open the `dapp.html` or `wallet.html` file in your browser and try out the basic functionality. To support browser extensions as well, the file should be viewed over a webserver. You can navigate to the example folder and easily start one with `python -m SimpleHTTPServer 8000` and then open the examples with `http://localhost:8000/`.
+
+## Attribution
+
+Mavlet SDK is a fork and derivative work of the [Beacon SDK](https://github.com/airgap-it/beacon-sdk) originally created by Papers AG. We thank the original team for their excellent work on the Beacon SDK, which forms the foundation of this project. The original Beacon SDK is licensed under the MIT License.

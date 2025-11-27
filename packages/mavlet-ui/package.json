@@ -1,10 +1,13 @@
 {
   "name": "@mavrykdynamics/mavlet-ui",
-  "version": "4.2.2",
+  "version": "1.0.0",
   "description": "This package contains the UI part (alerts and toasts) of the Mavlet SDK.",
-  "author": "Andreas Gassmann <a.gassmann@papers.ch>",
+  "author": "Mavryk Dynamics (https://mavryk.org)",
+  "contributors": [
+    "Andreas Gassmann <a.gassmann@papers.ch> (Papers AG)"
+  ],
   "homepage": "https://walletmavlet.io",
-  "license": "ISC",
+  "license": "MIT",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
@@ -34,10 +37,10 @@
     "url": "https://github.com/mavryk-network/mavlet-sdk/issues"
   },
   "dependencies": {
-    "@mavrykdynamics/mavlet-core": "^4.2.2",
-    "@mavrykdynamics/mavlet-transport-postmessage": "^4.2.2",
-    "@mavrykdynamics/mavlet-types": "^4.2.2",
-    "@mavrykdynamics/mavlet-utils": "^4.2.2",
+    "@mavrykdynamics/mavlet-core": "^1.0.0",
+    "@mavrykdynamics/mavlet-transport-postmessage": "^1.0.0",
+    "@mavrykdynamics/mavlet-types": "^1.0.0",
+    "@mavrykdynamics/mavlet-utils": "^1.0.0",
     "@walletconnect/utils": "2.11.2",
     "qrcode-svg": "^1.1.0",
     "solid-js": "^1.7.11"

@@ -14,7 +14,7 @@
       window.mavletSdkDebugEnabled = true
     </script>
     <script
-      src="https://unpkg.com/@mavrykdynamics/taquito@17.5.2/dist/taquito.min.js"
+      src="https://unpkg.com/@mavrykdynamics/webmavryk@2.0.0/dist/webmavryk.min.js"
       crossorigin="anonymous"
       integrity="sha384-EBq3+NByq2GkaEwD9J3S2wR5nDTiQaTym0+Z2HP4iMNrfZJNdtPzflpM7TOBE/Di"
     ></script>
@@ -68,7 +68,7 @@
 
     <script>
       // MavletWallet doesn't have an unpkg, so this is litteraly a copy/paste of the github:
-      // https://github.com/mavryk-network/mavryk-taquito/blob/a763b7b3cf202863a7582f34dca27679e7cb2e9b/packages/taquito-mavlet-wallet/src/taquito-mavlet-wallet.ts
+      // https://github.com/mavryk-network/webmavryk/blob/a763b7b3cf202863a7582f34dca27679e7cb2e9b/packages/webmavryk-mavlet-wallet/src/webmavryk-mavlet-wallet.ts
       // Also there's all the required utils functions to make the transaction works
 
       const MV_DECIMALS = 6
@@ -107,7 +107,7 @@
         mumav = false
       }) => {
         const operation = {
-          kind: taquito.OpKind.TRANSACTION,
+          kind: webmavryk.OpKind.TRANSACTION,
           fee,
           gas_limit: gasLimit,
           storage_limit: storageLimit,
@@ -288,10 +288,10 @@
           relayUrl: 'wss://relay.walletconnect.com'
         },
         storage: new mavlet.LocalStorage('DAPP'),
-        preferredNetwork: mavlet.NetworkType.GHOSTNET
+        preferredNetwork: mavlet.NetworkType.BASENET
       })
 
-      const Mavryk = new taquito.MavrykToolkit('https://ghostnet.mavryk.marigold.dev/')
+      const Mavryk = new webmavryk.MavrykToolkit('https://basenet.mavryk.network/')
       Mavryk.setWalletProvider(new MavletWallet(dappClient))
 
       const updateActiveAccount = () => {
@@ -331,18 +331,18 @@
 
         // matrixNodes: {
         //   [mavlet.Regions.EUROPE_WEST]: [
-        //     'mavlet-node-1.diamond.papers.tech',
-        //     'mavlet-node-1.sky.papers.tech',
-        //     'mavlet-node-2.sky.papers.tech',
-        //     'mavlet-node-1.hope.papers.tech',
-        //     'mavlet-node-1.hope-2.papers.tech',
-        //     'mavlet-node-1.hope-3.papers.tech',
-        //     'mavlet-node-1.hope-4.papers.tech',
-        //     'mavlet-node-1.hope-5.papers.tech'
+        //     'beacon-node-1.diamond.papers.tech',
+        //     'beacon-node-1.sky.papers.tech',
+        //     'beacon-node-2.sky.papers.tech',
+        //     'beacon-node-1.hope.papers.tech',
+        //     'beacon-node-1.hope-2.papers.tech',
+        //     'beacon-node-1.hope-3.papers.tech',
+        //     'beacon-node-1.hope-4.papers.tech',
+        //     'beacon-node-1.hope-5.papers.tech'
         //   ],
         //   [mavlet.Regions.NORTH_AMERICA_EAST]: []
         // }
-        // matrixNodes: ['mavlet-node-0.papers.tech:8448']
+        // matrixNodes: ['beacon-node-0.papers.tech:8448']
         // matrixNodes: ['mavlet.tztip.me']
       })
 
@@ -462,7 +462,7 @@
         dappClient
           .requestPermissions({
             network: {
-              type: mavlet.NetworkType.GHOSTNET
+              type: mavlet.NetworkType.BASENET
             }
           })
           .then((permissions) => {

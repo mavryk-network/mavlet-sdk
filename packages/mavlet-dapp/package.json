@@ -1,10 +1,13 @@
 {
   "name": "@mavrykdynamics/mavlet-dapp",
-  "version": "4.2.2",
+  "version": "1.0.0",
   "description": "Use this package on your dApp to instanciate a DAppClient object and communicate to wallets.",
-  "author": "Andreas Gassmann <a.gassmann@papers.ch>",
+  "author": "Mavryk Dynamics (https://mavryk.org)",
+  "contributors": [
+    "Andreas Gassmann <a.gassmann@papers.ch> (Papers AG)"
+  ],
   "homepage": "https://walletmavlet.io",
-  "license": "ISC",
+  "license": "MIT",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "unpkg": "dist/walletmavlet.dapp.min.js",
@@ -35,10 +38,10 @@
     "url": "https://github.com/mavryk-network/mavlet-sdk/issues"
   },
   "dependencies": {
-    "@mavrykdynamics/mavlet-core": "^4.2.2",
-    "@mavrykdynamics/mavlet-transport-matrix": "^4.2.2",
-    "@mavrykdynamics/mavlet-transport-postmessage": "^4.2.2",
-    "@mavrykdynamics/mavlet-transport-walletconnect": "^4.2.2",
-    "@mavrykdynamics/mavlet-ui": "^4.2.2"
+    "@mavrykdynamics/mavlet-core": "^1.0.0",
+    "@mavrykdynamics/mavlet-transport-matrix": "^1.0.0",
+    "@mavrykdynamics/mavlet-transport-postmessage": "^1.0.0",
+    "@mavrykdynamics/mavlet-transport-walletconnect": "^1.0.0",
+    "@mavrykdynamics/mavlet-ui": "^1.0.0"
   }
 }

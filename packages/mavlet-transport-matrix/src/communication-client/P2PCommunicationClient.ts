@@ -45,19 +45,19 @@ const RESPONSE_WAIT_TIME_MS: number = 1000
 
 const REGIONS_AND_SERVERS: NodeDistributions = {
   [Regions.EUROPE_WEST]: [
-    'mavlet-node-1.diamond.papers.tech',
-    'mavlet-node-1.sky.papers.tech',
-    'mavlet-node-2.sky.papers.tech',
-    'mavlet-node-1.hope.papers.tech',
-    'mavlet-node-1.hope-2.papers.tech',
-    'mavlet-node-1.hope-3.papers.tech',
-    'mavlet-node-1.hope-4.papers.tech',
-    'mavlet-node-1.hope-5.papers.tech'
+    'beacon-node-1.diamond.papers.tech',
+    'beacon-node-1.sky.papers.tech',
+    'beacon-node-2.sky.papers.tech',
+    'beacon-node-1.hope.papers.tech',
+    'beacon-node-1.hope-2.papers.tech',
+    'beacon-node-1.hope-3.papers.tech',
+    'beacon-node-1.hope-4.papers.tech',
+    'beacon-node-1.hope-5.papers.tech'
   ],
-  [Regions.NORTH_AMERICA_EAST]: ['mavlet-node-1.mavlet-server-1.papers.tech'],
-  [Regions.NORTH_AMERICA_WEST]: ['mavlet-node-1.mavlet-server-2.papers.tech'],
-  [Regions.ASIA_EAST]: ['mavlet-node-1.mavlet-server-3.papers.tech'],
-  [Regions.AUSTRALIA]: ['mavlet-node-1.mavlet-server-4.papers.tech']
+  [Regions.NORTH_AMERICA_EAST]: ['beacon-node-1.mavlet-server-1.papers.tech'],
+  [Regions.NORTH_AMERICA_WEST]: ['beacon-node-1.mavlet-server-2.papers.tech'],
+  [Regions.ASIA_EAST]: ['beacon-node-1.mavlet-server-3.papers.tech'],
+  [Regions.AUSTRALIA]: ['beacon-node-1.mavlet-server-4.papers.tech']
 }
 
 interface MavletInfoResponse {
