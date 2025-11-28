@@ -18,7 +18,7 @@ describe(`MatrixClient`, () => {
   beforeEach(() => {
     sinon.restore()
     client = MatrixClient.create({
-      baseUrl: `https://test.walletmavlet.io`,
+      baseUrl: `https://test.mavlet.mavryk.org`,
       storage: new LocalStorage()
     })
     ;(client as any)._isReady.resolve()

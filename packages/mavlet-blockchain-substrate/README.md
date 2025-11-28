@@ -20,4 +20,4 @@ const substrateBlockchain = new SubstrateBlockchain()
 client.addBlockchain(substrateBlockchain)
 ```
 
-Check our documentation for more information. [Documentation](https://docs.walletmavlet.io)
+Check our documentation for more information. [Documentation](https://docs.mavlet.mavryk.org)

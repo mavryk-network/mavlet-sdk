@@ -8,7 +8,7 @@
 
 > Connect Wallets with dApps on Mavryk
 
-[Mavlet](https://walletmavlet.io) is the implementation of the wallet interaction standard [tzip-10](https://gitlab.com/tzip/tzip/blob/master/proposals/tzip-10/tzip-10.md) which describes the connnection of a dApp with a wallet.
+[Mavlet](https://mavlet.mavryk.org) is the implementation of the wallet interaction standard [tzip-10](https://gitlab.com/tzip/tzip/blob/master/proposals/tzip-10/tzip-10.md) which describes the connnection of a dApp with a wallet.
 
 ## Intro
 
@@ -23,7 +23,7 @@ Besides this Typescript SDK, we also provide SDKs for native iOS and Android Wal
 
 ## Documentation
 
-The documentation can be found [here](https://docs.walletmavlet.io/), technical documentation can be found [here](https://typedocs.walletmavlet.io/).
+The documentation can be found [here](https://docs.mavlet.mavryk.org/), technical documentation can be found [here](https://typedocs.mavlet.mavryk.org/).
 
 ## Installation
 

@@ -14,4 +14,4 @@ import { DAppClient } from '@mavrykdynamics/mavlet-dapp'
 const dAppClient = new DAppClient({ name: "Mavlet Docs" });
 ```
 
-Check our documentation for more information. [Documentation](https://docs.walletmavlet.io)
+Check our documentation for more information. [Documentation](https://docs.mavlet.mavryk.org)

@@ -52,7 +52,7 @@ const peer1: ExtendedP2PPairingRequest = {
   version: MAVLET_VERSION,
   publicKey: 'my-public-key',
   senderId: 'sender1',
-  relayServer: 'test-relay.walletmavlet.io'
+  relayServer: 'test-relay.mavlet.mavryk.org'
 }
 
 const peer2: ExtendedP2PPairingRequest = {
@@ -62,7 +62,7 @@ const peer2: ExtendedP2PPairingRequest = {
   version: MAVLET_VERSION,
   publicKey: 'my-public-key-2',
   senderId: 'sender2',
-  relayServer: 'test-relay.walletmavlet.io'
+  relayServer: 'test-relay.mavlet.mavryk.org'
 }
 
 const account1: AccountInfo = {

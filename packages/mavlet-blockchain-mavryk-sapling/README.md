@@ -20,4 +20,4 @@ const mavrykSaplingBlockchain = new MavrykSaplingBlockchain()
 client.addBlockchain(mavrykSaplingBlockchain)
 ```
 
-Check our documentation for more information. [Documentation](https://docs.walletmavlet.io)
+Check our documentation for more information. [Documentation](https://docs.mavlet.mavryk.org)

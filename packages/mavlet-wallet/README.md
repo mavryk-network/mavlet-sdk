@@ -14,4 +14,4 @@ import { WalletClient } from '@mavrykdynamics/mavlet-wallet'
 const walletClient = new WalletClient({ name: "Example Wallet" });
 ```
 
-Check our documentation for more information. [Documentation](https://docs.walletmavlet.io)
+Check our documentation for more information. [Documentation](https://docs.mavlet.mavryk.org)

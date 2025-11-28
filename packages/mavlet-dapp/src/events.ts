@@ -319,7 +319,7 @@ const showInvalidActiveAccountState = async (): Promise<void> => {
   await openAlert({
     title: 'Invalid state',
     body: `An active account has been received, but no active subscription was found for MavletEvent.ACTIVE_ACCOUNT_SET.
-    For more information, visit: https://docs.walletmavlet.io/guides/migration-guide`
+    For more information, visit: https://docs.mavlet.mavryk.org/guides/migration-guide`
   })
 }
 

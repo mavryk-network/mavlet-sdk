@@ -8,4 +8,4 @@ This package contains types that are used throughout the SDK.
 
 Unless you need to import types from this package, you probably don't need to add it to your project.
 
-Check our documentation for more information. [Documentation](https://docs.walletmavlet.io)
+Check our documentation for more information. [Documentation](https://docs.mavlet.mavryk.org)

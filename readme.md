@@ -3,12 +3,12 @@
 [![npm](https://img.shields.io/npm/v/@mavrykdynamics/mavlet-sdk.svg?colorB=brightgreen)](https://www.npmjs.com/package/@mavrykdynamics/mavlet-sdk)
 [![documentation](https://img.shields.io/badge/documentation-online-brightgreen.svg)](https://mavlet.mavryk.org/)
 [![GitHub Action](https://github.com/mavryk-network/mavlet-sdk/workflows/Build%2C%20Test%20and%20Analyze/badge.svg)](https://github.com/mavryk-network/mavlet-sdk/actions?query=workflow%3A%22Build%2C+Test+and+Analyze%22+branch%3Amain)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=mavryk-network_mavlet-sdk&metric=alert_status)](https://sonarcloud.io/dashboard?id=mavrykdynamics_mavlet-sdk)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=mavryk-network_mavlet-sdk&metric=alert_status)](https://sonarcloud.io/dashboard?id=mavryk-network_mavlet-sdk)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 > Connect Wallets with dApps on Mavryk
 
-[Mavlet](https://walletmavlet.io) is the implementation of the wallet interaction standard [tzip-10](https://gitlab.com/tzip/tzip/blob/master/proposals/tzip-10/tzip-10.md) which describes the connnection of a dApp with a wallet.
+[Mavlet](https://mavlet.mavryk.org) is the implementation of the wallet interaction standard [tzip-10](https://gitlab.com/tzip/tzip/blob/master/proposals/tzip-10/tzip-10.md) which describes the connnection of a dApp with a wallet.
 
 ## Intro
 
@@ -23,7 +23,7 @@ Besides this Typescript SDK, we also provide SDKs for native iOS and Android Wal
 
 ## Documentation
 
-The documentation can be found [here](https://docs.walletmavlet.io/), technical documentation can be found [here](https://typedocs.walletmavlet.io/).
+The documentation can be found [here](https://docs.mavlet.mavryk.org/), technical documentation can be found [here](https://typedocs.mavlet.mavryk.org/).
 
 ## Installation
 
