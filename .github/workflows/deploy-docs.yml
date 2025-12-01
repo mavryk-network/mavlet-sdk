@@ -11,16 +11,16 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Cache node modules
-        uses: actions/cache@v1
+        uses: actions/cache@v4
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-      - name: Node 16
-        uses: actions/setup-node@v1
+      - name: Node 20
+        uses: actions/setup-node@v4
         with:
-          node-version: 16.x
+          node-version: 20.x
 
       - name: Prepare
         run: npm ci
@@ -31,10 +31,10 @@ jobs:
         run: |
           npm run typedoc
           cd docs
-          echo 'beacon.mavryk.org' > CNAME
+          echo 'mavlet.mavryk.org' > CNAME
           git config --global user.email "support+actions@github.com"
           git config --global user.name "github-actions-bot"
           git init
           git add -A
           git commit -m 'chore(docs): including latest changes'
-          git push -f https://git:${GITHUB_TOKEN}@github.com/mavryk-network/beacon-sdk.git master:gh-pages
+          git push -f https://git:${GITHUB_TOKEN}@github.com/mavryk-network/mavlet-sdk.git master:gh-pages

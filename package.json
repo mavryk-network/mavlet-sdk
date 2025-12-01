@@ -1,16 +1,16 @@
 {
-  "name": "@mavrykdynamics/beacon-sdk",
-  "description": "The beacon-sdk allows you to easily connect DApps with Wallets through P2P communication or a chrome extension.",
+  "name": "@mavrykdynamics/mavlet-sdk",
+  "description": "The mavlet-sdk allows you to easily connect DApps with Wallets through P2P communication or a chrome extension.",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
-  "unpkg": "dist/walletbeacon.min.js",
+  "unpkg": "dist/walletmavlet.min.js",
   "types": "dist/esm/index.d.ts",
   "workspaces": [
     "packages/*"
   ],
   "keywords": [
     "mavrykdynamics",
-    "beacon",
+    "mavlet",
     "crypto",
     "blockchain",
     "mavryk",
@@ -21,19 +21,19 @@
   "homepage": "https://www.mavryk.org",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mavryk-network/beacon-sdk"
+    "url": "https://github.com/mavryk-network/mavlet-sdk"
   },
   "engines": {
     "npm": ">=7.0.0",
-    "node": ">=16.0.0"
+    "node": ">=18.0.0"
   },
   "scripts": {
     "prebuild": "ts-node --project tsconfig-cjs.json scripts/generate-wallet-list.ts",
     "build": "npm run check-version && lerna run tsc && npm run webpack:all",
     "webpack:all": "npm run webpack:sdk && npm run webpack:dapp && npm run webpack:wallet",
-    "webpack:sdk": "webpack --mode=development --config webpack.config.js --entry=./packages/beacon-sdk/dist/cjs/index.js --output-path ./webpack_builds/sdk && terser --ecma=12 ./webpack_builds/sdk/main.js -o ./packages/beacon-sdk/dist/walletbeacon.min.js && cp ./packages/beacon-sdk/dist/walletbeacon.min.js ./examples/walletbeacon.min.js",
-    "webpack:dapp": "webpack --mode=development --entry=./packages/beacon-dapp/dist/cjs/index.js --output-path ./webpack_builds/dapp && terser --ecma=12 ./webpack_builds/dapp/main.js -o ./packages/beacon-dapp/dist/walletbeacon.dapp.min.js",
-    "webpack:wallet": "webpack --mode=development --entry=./packages/beacon-wallet/dist/cjs/index.js --output-path ./webpack_builds/wallet && terser --ecma=12 ./webpack_builds/wallet/main.js -o ./packages/beacon-wallet/dist/walletbeacon.wallet.min.js",
+    "webpack:sdk": "webpack --mode=development --config webpack.config.js --entry=./packages/mavlet-sdk/dist/cjs/index.js --output-path ./webpack_builds/sdk && terser --ecma=12 ./webpack_builds/sdk/main.js -o ./packages/mavlet-sdk/dist/walletmavlet.min.js && cp ./packages/mavlet-sdk/dist/walletmavlet.min.js ./examples/walletmavlet.min.js",
+    "webpack:dapp": "webpack --mode=development --entry=./packages/mavlet-dapp/dist/cjs/index.js --output-path ./webpack_builds/dapp && terser --ecma=12 ./webpack_builds/dapp/main.js -o ./packages/mavlet-dapp/dist/walletmavlet.dapp.min.js",
+    "webpack:wallet": "webpack --mode=development --entry=./packages/mavlet-wallet/dist/cjs/index.js --output-path ./webpack_builds/wallet && terser --ecma=12 ./webpack_builds/wallet/main.js -o ./packages/mavlet-wallet/dist/walletmavlet.wallet.min.js",
     "prettier": "prettier --write 'src/**/*' '**/src/**/*' 'docs/**/*.md' 'example-dapp.html' 'example-wallet.html'",
     "lint": "eslint 'src/**/*.ts'",
     "lint:fix": "eslint 'src/**/*.ts' --fix",
@@ -58,20 +58,23 @@
     "bump:patch": "lerna version --no-git-tag-version patch --exact --yes",
     "bump:beta": "lerna version --no-git-tag-version prerelease --preid beta --exact --yes"
   },
-  "author": "Papers AG <contact@papers.ch> (https://papers.ch)",
+  "author": "Mavryk Dynamics (https://mavryk.org)",
+  "contributors": [
+    "Papers AG <contact@papers.ch> (https://papers.ch)"
+  ],
   "dependencies": {
-    "@mavrykdynamics/beacon-blockchain-substrate": "file:packages/beacon-blockchain-substrate",
-    "@mavrykdynamics/beacon-blockchain-mavryk": "file:packages/beacon-blockchain-mavryk",
-    "@mavrykdynamics/beacon-blockchain-mavryk-sapling": "file:packages/beacon-blockchain-mavryk-sapling",
-    "@mavrykdynamics/beacon-core": "file:packages/beacon-core",
-    "@mavrykdynamics/beacon-dapp": "file:packages/beacon-dapp",
-    "@mavrykdynamics/beacon-transport-matrix": "file:packages/beacon-transport-matrix",
-    "@mavrykdynamics/beacon-transport-postmessage": "file:packages/beacon-transport-postmessage",
-    "@mavrykdynamics/beacon-transport-walletconnect": "file:packages/beacon-transport-walletconnect",
-    "@mavrykdynamics/beacon-types": "file:packages/beacon-types",
-    "@mavrykdynamics/beacon-ui": "file:packages/beacon-ui",
-    "@mavrykdynamics/beacon-utils": "file:packages/beacon-utils",
-    "@mavrykdynamics/beacon-wallet": "file:packages/beacon-wallet",
+    "@mavrykdynamics/mavlet-blockchain-substrate": "file:packages/mavlet-blockchain-substrate",
+    "@mavrykdynamics/mavlet-blockchain-mavryk": "file:packages/mavlet-blockchain-mavryk",
+    "@mavrykdynamics/mavlet-blockchain-mavryk-sapling": "file:packages/mavlet-blockchain-mavryk-sapling",
+    "@mavrykdynamics/mavlet-core": "file:packages/mavlet-core",
+    "@mavrykdynamics/mavlet-dapp": "file:packages/mavlet-dapp",
+    "@mavrykdynamics/mavlet-transport-matrix": "file:packages/mavlet-transport-matrix",
+    "@mavrykdynamics/mavlet-transport-postmessage": "file:packages/mavlet-transport-postmessage",
+    "@mavrykdynamics/mavlet-transport-walletconnect": "file:packages/mavlet-transport-walletconnect",
+    "@mavrykdynamics/mavlet-types": "file:packages/mavlet-types",
+    "@mavrykdynamics/mavlet-ui": "file:packages/mavlet-ui",
+    "@mavrykdynamics/mavlet-utils": "file:packages/mavlet-utils",
+    "@mavrykdynamics/mavlet-wallet": "file:packages/mavlet-wallet",
     "@walletconnect/sign-client": "2.11.2",
     "@walletconnect/types": "2.11.2",
     "@walletconnect/utils": "2.11.2",

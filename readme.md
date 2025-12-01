@@ -1,47 +1,47 @@
-# Beacon SDK
+# Mavlet SDK
 
-[![npm](https://img.shields.io/npm/v/@mavrykdynamics/beacon-sdk.svg?colorB=brightgreen)](https://www.npmjs.com/package/@mavrykdynamics/beacon-sdk)
-[![documentation](https://img.shields.io/badge/documentation-online-brightgreen.svg)](https://beacon.mavryk.org/)
-[![GitHub Action](https://github.com/mavryk-network/beacon-sdk/workflows/Build%2C%20Test%20and%20Analyze/badge.svg)](https://github.com/mavryk-network/beacon-sdk/actions?query=workflow%3A%22Build%2C+Test+and+Analyze%22+branch%3Amain)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=mavryk-network_beacon-sdk&metric=alert_status)](https://sonarcloud.io/dashboard?id=mavrykdynamics_beacon-sdk)
+[![npm](https://img.shields.io/npm/v/@mavrykdynamics/mavlet-sdk.svg?colorB=brightgreen)](https://www.npmjs.com/package/@mavrykdynamics/mavlet-sdk)
+[![documentation](https://img.shields.io/badge/documentation-online-brightgreen.svg)](https://mavlet.mavryk.org/)
+[![GitHub Action](https://github.com/mavryk-network/mavlet-sdk/workflows/Build%2C%20Test%20and%20Analyze/badge.svg)](https://github.com/mavryk-network/mavlet-sdk/actions?query=workflow%3A%22Build%2C+Test+and+Analyze%22+branch%3Amain)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=mavryk-network_mavlet-sdk&metric=alert_status)](https://sonarcloud.io/dashboard?id=mavryk-network_mavlet-sdk)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 > Connect Wallets with dApps on Mavryk
 
-[Beacon](https://walletbeacon.io) is the implementation of the wallet interaction standard [tzip-10](https://gitlab.com/tzip/tzip/blob/master/proposals/tzip-10/tzip-10.md) which describes the connnection of a dApp with a wallet.
+[Mavlet](https://mavlet.mavryk.org) is the implementation of the wallet interaction standard [tzip-10](https://gitlab.com/tzip/tzip/blob/master/proposals/tzip-10/tzip-10.md) which describes the connnection of a dApp with a wallet.
 
 ## Intro
 
-The `beacon-sdk` simplifies and abstracts the communication between dApps and wallets over different transport layers.
+The `mavlet-sdk` simplifies and abstracts the communication between dApps and wallets over different transport layers.
 
-Developers that plan to develop complex smart contract interactions can use [Taquito](https://github.com/mavryk-network/mavryk-taquito) with the `BeaconWallet`, which uses this SDK under the hood, but provides helpful methods to interact with contracts.
+Developers that plan to develop complex smart contract interactions can use [WebMavryk](https://github.com/mavryk-network/webmavryk) with the `MavletWallet`, which uses this SDK under the hood, but provides helpful methods to interact with contracts.
 
 Besides this Typescript SDK, we also provide SDKs for native iOS and Android Wallets:
 
-- [Beacon Android SDK (Kotlin)](https://github.com/mavryk-network/beacon-android-sdk)
-- [Beacon iOS SDK (Swift)](https://github.com/mavryk-network/beacon-ios-sdk)
+- [Mavlet Android SDK (Kotlin)](https://github.com/mavryk-network/mavlet-android-sdk)
+- [Mavlet iOS SDK (Swift)](https://github.com/mavryk-network/mavlet-ios-sdk)
 
 ## Documentation
 
-The documentation can be found [here](https://docs.walletbeacon.io/), technical documentation can be found [here](https://typedocs.walletbeacon.io/).
+The documentation can be found [here](https://docs.mavlet.mavryk.org/), technical documentation can be found [here](https://typedocs.mavlet.mavryk.org/).
 
 ## Installation
 
 ```
-npm i --save @mavrykdynamics/beacon-sdk
+npm i --save @mavrykdynamics/mavlet-sdk
 ```
 
 ## Example DApp integration
 
 ```ts
-import { DAppClient } from '@mavrykdynamics/beacon-sdk'
+import { DAppClient } from '@mavrykdynamics/mavlet-sdk'
 
 const dAppClient = new DAppClient({ name: 'My Sample DApp' })
 
 // Listen for all the active account changes
-dAppClient.subscribeToEvent(BeaconEvent.ACTIVE_ACCOUNT_SET, async (account) => {
+dAppClient.subscribeToEvent(MavletEvent.ACTIVE_ACCOUNT_SET, async (account) => {
   // An active account has been set, update the dApp UI
-  console.log(`${BeaconEvent.ACTIVE_ACCOUNT_SET} triggered: `, account)
+  console.log(`${MavletEvent.ACTIVE_ACCOUNT_SET} triggered: `, account)
 })
 
 try {
@@ -64,11 +64,11 @@ await client.init() // Establish P2P connection
 client
   .connect(async (message) => {
     // Example: Handle PermissionRequest. A wallet should handle all request types
-    if (message.type === BeaconMessageType.PermissionRequest) {
+    if (message.type === MavletMessageType.PermissionRequest) {
       // Show a UI to the user where he can confirm sharing an account with the DApp
 
       const response: PermissionResponseInput = {
-        type: BeaconMessageType.PermissionResponse,
+        type: MavletMessageType.PermissionResponse,
         network: message.network, // Use the same network that the user requested
         scopes: [PermissionScope.OPERATION_REQUEST], // Ignore the scopes that have been requested and instead give only operation permissions
         id: message.id,
@@ -84,9 +84,9 @@ client
 
 For a more complete example, take a look at the `example-wallet.html` file.
 
-## Adding a wallet to beacon-sdk
+## Adding a wallet to mavlet-sdk
 
-Please create a PR and add your wallet [here](https://github.com/mavryk-network/beacon-sdk/blob/master/scripts/generate-wallet-list.ts).
+Please create a PR and add your wallet [here](https://github.com/mavryk-network/mavlet-sdk/blob/master/scripts/generate-wallet-list.ts).
 
 For iOS wallets, the wallet needs to define a custom url scheme to support the same-device functionality.
 
@@ -99,3 +99,7 @@ $ npm run test
 ```
 
 Once the SDK is built, you can open the `dapp.html` or `wallet.html` file in your browser and try out the basic functionality. To support browser extensions as well, the file should be viewed over a webserver. You can navigate to the example folder and easily start one with `python -m SimpleHTTPServer 8000` and then open the examples with `http://localhost:8000/`.
+
+## Attribution
+
+Mavlet SDK is a fork and derivative work of the [Beacon SDK](https://github.com/airgap-it/beacon-sdk) originally created by Papers AG. We thank the original team for their excellent work on the Beacon SDK, which forms the foundation of this project. The original Beacon SDK is licensed under the MIT License.

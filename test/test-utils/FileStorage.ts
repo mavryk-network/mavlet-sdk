@@ -1,5 +1,5 @@
 import { readFile, writeFile } from 'fs'
-import { defaultValues, Storage, StorageKey, StorageKeyReturnType } from '@mavrykdynamics/beacon-types'
+import { defaultValues, Storage, StorageKey, StorageKeyReturnType } from '@mavrykdynamics/mavlet-types'
 
 const file: string = './storage.json'
 

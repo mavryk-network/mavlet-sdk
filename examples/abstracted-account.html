@@ -4,17 +4,17 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="Content-Style-Type" content="text/css" />
-    <title>Beacon Example Abstracted account</title>
+    <title>Mavlet Example Abstracted account</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css" />
 
     <script>
-      // This will enable the debug mode of beacon
+      // This will enable the debug mode of mavlet
       // This should only be used during development
-      window.beaconSdkDebugEnabled = true
+      window.mavletSdkDebugEnabled = true
     </script>
     <script
-      src="https://unpkg.com/@mavrykdynamics/taquito@17.5.2/dist/taquito.min.js"
+      src="https://unpkg.com/@mavrykdynamics/webmavryk@2.0.0/dist/webmavryk.min.js"
       crossorigin="anonymous"
       integrity="sha384-EBq3+NByq2GkaEwD9J3S2wR5nDTiQaTym0+Z2HP4iMNrfZJNdtPzflpM7TOBE/Di"
     ></script>
@@ -32,11 +32,11 @@
       })
     </script>
 
-    <script src="./walletbeacon.min.js"></script>
+    <script src="./walletmavlet.min.js"></script>
   </head>
 
   <body>
-    Beacon Example Abstracted Account
+    Mavlet Example Abstracted Account
     <br /><br />
     <div id="status"></div>
     <br /><br />
@@ -67,8 +67,8 @@
     Test input: <input id="hidden-input" type="text" />
 
     <script>
-      // BeaconWallet doesn't have an unpkg, so this is litteraly a copy/paste of the github:
-      // https://github.com/mavryk-network/mavryk-taquito/blob/a763b7b3cf202863a7582f34dca27679e7cb2e9b/packages/taquito-beacon-wallet/src/taquito-beacon-wallet.ts
+      // MavletWallet doesn't have an unpkg, so this is litteraly a copy/paste of the github:
+      // https://github.com/mavryk-network/webmavryk/blob/a763b7b3cf202863a7582f34dca27679e7cb2e9b/packages/webmavryk-mavlet-wallet/src/webmavryk-mavlet-wallet.ts
       // Also there's all the required utils functions to make the transaction works
 
       const MV_DECIMALS = 6
@@ -107,7 +107,7 @@
         mumav = false
       }) => {
         const operation = {
-          kind: taquito.OpKind.TRANSACTION,
+          kind: webmavryk.OpKind.TRANSACTION,
           fee,
           gas_limit: gasLimit,
           storage_limit: storageLimit,
@@ -119,7 +119,7 @@
         return operation
       }
 
-      class BeaconWallet {
+      class MavletWallet {
         constructor(client) {
           this.client = client
         }
@@ -145,7 +145,7 @@
         async getPKH() {
           const account = await this.client.getActiveAccount()
           if (!account) {
-            throw new BeaconWalletNotInitialized()
+            throw new MavletWalletNotInitialized()
           }
           return account.address
         }
@@ -225,7 +225,7 @@
 
         removeDefaultParams(params, operatedParams) {
           // If fee, storageLimit or gasLimit is undefined by user
-          // in case of beacon wallet, dont override it by
+          // in case of mavlet wallet, dont override it by
           // defaults.
           if (!params.fee) {
             delete operatedParams.fee
@@ -242,10 +242,10 @@
         async sendOperations(params) {
           const account = await this.client.getActiveAccount()
           if (!account) {
-            throw new BeaconWalletNotInitialized()
+            throw new MavletWalletNotInitialized()
           }
           const permissions = account.scopes
-          this.validateRequiredScopesOrFail(permissions, [beacon.PermissionScope.OPERATION_REQUEST])
+          this.validateRequiredScopesOrFail(permissions, [mavlet.PermissionScope.OPERATION_REQUEST])
 
           const { transactionHash } = await this.client.requestOperation({
             operationDetails: params
@@ -255,8 +255,8 @@
 
         /**
          *
-         * @description Removes all beacon values from the storage. After using this method, this instance is no longer usable.
-         * You will have to instantiate a new BeaconWallet.
+         * @description Removes all mavlet values from the storage. After using this method, this instance is no longer usable.
+         * You will have to instantiate a new MavletWallet.
          */
         async disconnect() {
           await this.client.destroy()
@@ -279,7 +279,7 @@
       }
 
       // Initiate DAppClient
-      const dappClient = beacon.getDAppClientInstance({
+      const dappClient = mavlet.getDAppClientInstance({
         name: 'Example DApp', // Name of the DApp,
         disclaimerText: 'This is an optional <b>disclaimer</b>.',
         appUrl: 'http://localhost:8080',
@@ -287,12 +287,12 @@
           projectId: '97f804b46f0db632c52af0556586a5f3',
           relayUrl: 'wss://relay.walletconnect.com'
         },
-        storage: new beacon.LocalStorage('DAPP'),
-        preferredNetwork: beacon.NetworkType.GHOSTNET
+        storage: new mavlet.LocalStorage('DAPP'),
+        preferredNetwork: mavlet.NetworkType.BASENET
       })
 
-      const Mavryk = new taquito.MavrykToolkit('https://ghostnet.mavryk.marigold.dev/')
-      Mavryk.setWalletProvider(new BeaconWallet(dappClient))
+      const Mavryk = new webmavryk.MavrykToolkit('https://basenet.mavryk.network/')
+      Mavryk.setWalletProvider(new MavletWallet(dappClient))
 
       const updateActiveAccount = () => {
         dappClient.getActiveAccount().then((activeAccount) => {
@@ -325,12 +325,12 @@
           .send()
       }
       // Initiate WalletClient
-      const client = new beacon.WalletClient({
+      const client = new mavlet.WalletClient({
         name: 'Example Wallet', // Name of the DApp
-        storage: new beacon.LocalStorage('WALLET')
+        storage: new mavlet.LocalStorage('WALLET')
 
         // matrixNodes: {
-        //   [beacon.Regions.EUROPE_WEST]: [
+        //   [mavlet.Regions.EUROPE_WEST]: [
         //     'beacon-node-1.diamond.papers.tech',
         //     'beacon-node-1.sky.papers.tech',
         //     'beacon-node-2.sky.papers.tech',
@@ -340,10 +340,10 @@
         //     'beacon-node-1.hope-4.papers.tech',
         //     'beacon-node-1.hope-5.papers.tech'
         //   ],
-        //   [beacon.Regions.NORTH_AMERICA_EAST]: []
+        //   [mavlet.Regions.NORTH_AMERICA_EAST]: []
         // }
         // matrixNodes: ['beacon-node-0.papers.tech:8448']
-        // matrixNodes: ['beacon.tztip.me']
+        // matrixNodes: ['mavlet.tztip.me']
       })
 
       const setStatus = (status) => {
@@ -353,7 +353,7 @@
       // Add event listener to the button
       document.getElementById('paste').addEventListener('click', () => {
         const addPeer = (text) => {
-          const serializer = new beacon.Serializer()
+          const serializer = new mavlet.Serializer()
           serializer
             .deserialize(text)
             .then((peer) => {
@@ -387,11 +387,11 @@
 
             console.log('message', message)
             // Example: Handle PermissionRequest. A wallet should handle all request types
-            if (message.type === beacon.BeaconMessageType.PermissionRequest) {
+            if (message.type === mavlet.MavletMessageType.PermissionRequest) {
               // Show a UI to the user where he can confirm sharing an account with the DApp
 
               const response = {
-                type: beacon.BeaconMessageType.PermissionResponse,
+                type: mavlet.MavletMessageType.PermissionResponse,
                 network: message.network, // Use the same network that the user requested
                 scopes: message.scopes, // Ignore the scopes that have been requested and instead give only operation permissions
                 id: message.id,
@@ -412,7 +412,7 @@
 
               // Send response back to DApp
               client.respond(response)
-            } else if (message.type === beacon.BeaconMessageType.ProofOfEventChallengeRequest) {
+            } else if (message.type === mavlet.MavletMessageType.ProofOfEventChallengeRequest) {
               const isAccepted = window.confirm(
                 'Do you want to accept the Proof Of Event Challenge ?'
               )
@@ -423,7 +423,7 @@
               client
                 .respond({
                   ...message,
-                  type: beacon.BeaconMessageType.ProofOfEventChallengeResponse,
+                  type: mavlet.MavletMessageType.ProofOfEventChallengeResponse,
                   isAccepted
                 })
                 .then(() => {
@@ -438,9 +438,9 @@
               console.error('Received: ', message)
 
               const response = {
-                type: beacon.BeaconMessageType.Error,
+                type: mavlet.MavletMessageType.Error,
                 id: message.id,
-                errorType: beacon.BeaconErrorType.ABORTED_ERROR
+                errorType: mavlet.MavletErrorType.ABORTED_ERROR
               }
               client.respond(response)
             }
@@ -462,7 +462,7 @@
         dappClient
           .requestPermissions({
             network: {
-              type: beacon.NetworkType.GHOSTNET
+              type: mavlet.NetworkType.BASENET
             }
           })
           .then((permissions) => {

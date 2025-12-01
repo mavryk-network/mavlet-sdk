@@ -1,10 +1,10 @@
-#beacon-main-text {
+#mavlet-main-text {
   display: initial;
 }
-.beacon-selection__container {
+.mavlet-selection__container {
   padding: 16px 16px 0;
 }
-.beacon-selection__list {
+.mavlet-selection__list {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -12,65 +12,65 @@
   padding-bottom: 12px;
   align-items: center;
 }
-.beacon-list__title {
+.mavlet-list__title {
   text-align: left;
   font-size: 12px;
 }
-.beacon-list__wrapper:nth-child(-n + 3) {
+.mavlet-list__wrapper:nth-child(-n + 3) {
   padding: 0 0 1rem;
 }
-.theme__light .beacon-list__title {
+.theme__light .mavlet-list__title {
   color: #7c828b;
 }
-.theme__dark .beacon-list__title,
-.theme__dark #beacon--disclaimer {
+.theme__dark .mavlet-list__title,
+.theme__dark #mavlet--disclaimer {
   color: #7c99d6;
 }
 
-.beacon-selection__name {
+.mavlet-selection__name {
   font-size: 1rem;
   font-weight: 600;
   text-align: left;
 }
-.theme__light .beacon-selection__name,
-.theme__light .beacon--selection__name__lg {
+.theme__light .mavlet-selection__name,
+.theme__light .mavlet--selection__name__lg {
   color: #3b3d40;
 }
-.theme__dark .beacon-selection__name,
-.theme__dark .beacon--selection__name__lg {
+.theme__dark .mavlet-selection__name,
+.theme__dark .mavlet--selection__name__lg {
   color: #6183ff;
 }
-.beacon-selection__img {
+.mavlet-selection__img {
   width: 48px;
   height: 48px;
   box-shadow: 0 4px 12px 0 rgba(17, 17, 17, 0.24);
   border-radius: 16px;
   background-color: #fff;
 }
-.beacon--selection__name__lg {
+.mavlet--selection__name__lg {
   font-size: 1.5rem;
   font-weight: 600;
   text-align: center;
   padding: 1rem 0;
 }
-.beacon--selected__container {
+.mavlet--selected__container {
   padding: 2rem 0 0;
 }
-#beacon--qr__copy__container {
+#mavlet--qr__copy__container {
   height: 0;
 }
-#beacon--qr__copy {
+#mavlet--qr__copy {
   display: none;
   position: relative;
   margin-top: auto;
   margin-left: auto;
   margin-right: auto;
 }
-#beacon--qr__container {
+#mavlet--qr__container {
   margin-left: auto;
   margin-right: auto;
 }
-#beacon--qr__container:hover #beacon--qr__copy {
+#mavlet--qr__container:hover #mavlet--qr__copy {
   display: block;
 }
 
@@ -82,7 +82,7 @@
   opacity: 0.48;
 }
 
-#beacon--disclaimer {
+#mavlet--disclaimer {
   text-align: left;
   padding-top: 24px;
   font-size: 0.875rem;

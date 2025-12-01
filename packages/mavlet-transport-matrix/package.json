@@ -1,0 +1,44 @@
+{
+  "name": "@mavrykdynamics/mavlet-transport-matrix",
+  "version": "1.0.0",
+  "description": "This package contains methods to facilitate communication over the Mavlet network, a decentralised P2P network that is based on the matrix protocol.",
+  "author": "Mavryk Dynamics (https://mavryk.org)",
+  "contributors": [
+    "Andreas Gassmann <a.gassmann@papers.ch> (Papers AG)"
+  ],
+  "homepage": "https://walletmavlet.io",
+  "license": "MIT",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/esm/index.d.ts",
+  "exports": {
+    "require": "./dist/cjs/index.js",
+    "import": "./dist/esm/index.js"
+  },
+  "directories": {
+    "lib": "dist/esm",
+    "test": "__tests__"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mavryk-network/mavlet-sdk.git"
+  },
+  "scripts": {
+    "tsc": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
+    "test": "TS_NODE_PROJECT='tsconfig-cjs.json' nyc mocha --require ts-node/register --require source-map-support/register --full-trace --timeout 40000 ./__tests__/**/**.spec.ts"
+  },
+  "bugs": {
+    "url": "https://github.com/mavryk-network/mavlet-sdk/issues"
+  },
+  "dependencies": {
+    "@mavrykdynamics/mavlet-core": "^1.0.0",
+    "@mavrykdynamics/mavlet-utils": "^1.0.0",
+    "axios": "^1.6.2"
+  }
+}

@@ -1,5 +1,5 @@
-import { App, DesktopApp, ExtensionApp, WebApp } from 'packages/beacon-types/src/types/ui'
-// import { NetworkType } from 'packages/beacon-types/src/types'
+import { App, DesktopApp, ExtensionApp, WebApp } from 'packages/mavlet-types/src/types/ui'
+// import { NetworkType } from 'packages/mavlet-types/src/types'
 // TODO: Temporary build fix
 export enum NetworkType {
   MAINNET = 'mainnet',
@@ -17,14 +17,4 @@ export const mavrykSaplingWebList: WebApp[] = []
 
 export const mavrykSaplingDesktopList: DesktopApp[] = []
 
-export const mavrykSaplingIosList: App[] = [
-  // {
-  //   key: 'airgap_ios',
-  //   name: 'AirGap Wallet',
-  //   shortName: 'AirGap',
-  //   color: 'rgb(4, 235, 204)',
-  //   logo: 'ios-airgap.png',
-  //   universalLink: 'https://wallet.airgap.it',
-  //   deepLink: 'airgap-wallet://'
-  // }
-]
+export const mavrykSaplingIosList: App[] = []

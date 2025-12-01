@@ -1,0 +1,43 @@
+{
+  "name": "@mavrykdynamics/mavlet-blockchain-substrate",
+  "version": "1.0.0",
+  "description": "This package adds support for `substrate` based blockchains. It can be used in combination with the `@mavrykdynamics/mavlet-dapp` or `@mavrykdynamics/mavlet-wallet` packages.",
+  "author": "Mavryk Dynamics (https://mavryk.org)",
+  "contributors": [
+    "Andreas Gassmann <a.gassmann@papers.ch> (Papers AG)"
+  ],
+  "homepage": "https://walletmavlet.io",
+  "license": "MIT",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/esm/index.d.ts",
+  "exports": {
+    "require": "./dist/cjs/index.js",
+    "import": "./dist/esm/index.js"
+  },
+  "directories": {
+    "lib": "dist/esm",
+    "test": "__tests__"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mavryk-network/mavlet-sdk.git"
+  },
+  "scripts": {
+    "tsc": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
+    "test": "TS_NODE_PROJECT='tsconfig-cjs.json' nyc mocha --require ts-node/register --require source-map-support/register --full-trace --timeout 40000 ./__tests__/**/**.spec.ts"
+  },
+  "bugs": {
+    "url": "https://github.com/mavryk-network/mavlet-sdk/issues"
+  },
+  "dependencies": {
+    "@mavrykdynamics/mavlet-types": "^1.0.0",
+    "@mavrykdynamics/mavlet-ui": "^1.0.0"
+  }
+}

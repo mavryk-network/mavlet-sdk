@@ -1,1 +1,1 @@
-https://docs.walletbeacon.io/CHANGELOG
+https://docs.mavlet.mavryk.org/CHANGELOG

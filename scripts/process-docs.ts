@@ -33,4 +33,4 @@ getFilesRecursively('./docs/')
     updateFile(element)
   })
 
-console.log('Injected beacon docs code.')
+console.log('Injected mavlet docs code.')

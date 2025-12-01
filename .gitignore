@@ -71,22 +71,22 @@ gl-dependency-scanning-report.json
 e2e/output
 combined.webm
 
-examples/walletbeacon.min.js
+examples/walletmavlet.min.js
 
 lib
 docs
 
 webpack_builds
 
-packages/beacon-blockchain-mavryk/src/ui/alert/alert-templates.ts
-packages/beacon-blockchain-mavryk/src/ui/alert/wallet-lists.ts
-packages/beacon-blockchain-mavryk/src/ui/toast/toast-templates.ts
-packages/beacon-blockchain-mavryk-sapling/src/ui/alert/alert-templates.ts
-packages/beacon-blockchain-mavryk-sapling/src/ui/alert/wallet-lists.ts
-packages/beacon-blockchain-mavryk-sapling/src/ui/toast/toast-templates.ts
-packages/beacon-blockchain-substrate/src/ui/alert/alert-templates.ts
-packages/beacon-blockchain-substrate/src/ui/alert/wallet-lists.ts
-packages/beacon-blockchain-substrate/src/ui/toast/toast-templates.ts
-packages/beacon-ui/src/ui/alert/alert-templates.ts
-packages/beacon-ui/src/ui/alert/wallet-lists.ts
-packages/beacon-ui/src/ui/toast/toast-templates.ts
+packages/mavlet-blockchain-mavryk/src/ui/alert/alert-templates.ts
+packages/mavlet-blockchain-mavryk/src/ui/alert/wallet-lists.ts
+packages/mavlet-blockchain-mavryk/src/ui/toast/toast-templates.ts
+packages/mavlet-blockchain-mavryk-sapling/src/ui/alert/alert-templates.ts
+packages/mavlet-blockchain-mavryk-sapling/src/ui/alert/wallet-lists.ts
+packages/mavlet-blockchain-mavryk-sapling/src/ui/toast/toast-templates.ts
+packages/mavlet-blockchain-substrate/src/ui/alert/alert-templates.ts
+packages/mavlet-blockchain-substrate/src/ui/alert/wallet-lists.ts
+packages/mavlet-blockchain-substrate/src/ui/toast/toast-templates.ts
+packages/mavlet-ui/src/ui/alert/alert-templates.ts
+packages/mavlet-ui/src/ui/alert/wallet-lists.ts
+packages/mavlet-ui/src/ui/toast/toast-templates.ts
