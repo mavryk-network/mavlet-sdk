@@ -2,7 +2,6 @@ import { Component, For } from 'solid-js'
 import { MergedWallet } from '../../utils/wallets'
 import Wallet from '../wallet'
 import styles from './styles.css'
-import { StorageKey } from '@mavrykdynamics/mavlet-types'
 
 interface TopWalletsProps {
   wallets: MergedWallet[]
@@ -14,7 +13,9 @@ interface TopWalletsProps {
 }
 
 const TopWallets: Component<TopWalletsProps> = (props: TopWalletsProps) => {
-  const enableBugReport = localStorage ? localStorage.getItem(StorageKey.ENABLE_METRICS) : 'false'
+  // TODO: Temporarily disabled - pending Mavryk backend setup to replace papers.tech endpoint
+  // Original: const enableBugReport = localStorage ? localStorage.getItem(StorageKey.ENABLE_METRICS) : 'false'
+  const enableBugReport: string = 'false' // Force disable bug reporting
 
   return (
     <div class="top-wallets-wrapper">
