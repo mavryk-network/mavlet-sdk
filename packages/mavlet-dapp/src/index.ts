@@ -18,4 +18,4 @@ export { DAppClient, DAppClientOptions, getDAppClientInstance }
 export { MavletEvent, MavletEventHandler, defaultEventCallbacks }
 
 // BlockExplorer
-export { BlockExplorer, MvktBlockExplorer, MvktBlockExplorer as TezblockBlockExplorer }
+export { BlockExplorer, MvktBlockExplorer, MvktBlockExplorer as MavblockBlockExplorer }

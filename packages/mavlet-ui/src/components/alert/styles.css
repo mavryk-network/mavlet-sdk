@@ -117,10 +117,6 @@
   justify-content: center;
 }
 
-.alert-logo svg {
-  height: 28px;
-}
-
 .alert-body {
   padding: 1.8em;
   padding-bottom: 0px;
