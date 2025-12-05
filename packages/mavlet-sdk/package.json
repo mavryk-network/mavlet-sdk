@@ -38,8 +38,8 @@
     "url": "https://github.com/mavryk-network/mavlet-sdk/issues"
   },
   "dependencies": {
-    "@mavrykdynamics/mavlet-blockchain-substrate": "^1.0.0",
     "@mavrykdynamics/mavlet-blockchain-mavryk": "^1.0.0",
+    "@mavrykdynamics/mavlet-blockchain-substrate": "^1.0.0",
     "@mavrykdynamics/mavlet-core": "^1.0.0",
     "@mavrykdynamics/mavlet-dapp": "^1.0.0",
     "@mavrykdynamics/mavlet-transport-matrix": "^1.0.0",
