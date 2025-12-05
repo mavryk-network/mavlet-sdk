@@ -12,19 +12,16 @@ export interface PairOtherProps {
   onClickLearnMore: () => void
 }
 
-const [uiState, setUiState] = createSignal<'selection' | 'p2p' | 'walletconnect'>('selection')
-const [hasMavlet, setHasMavlet] = createSignal<boolean>(false)
-const [hasWalletConnect, setHasWalletConnect] = createSignal<boolean>(false)
-const [qrData, setQrData] = createSignal<string>('')
-
 const PairOther: Component<PairOtherProps> = (props: PairOtherProps) => {
+  const [uiState, setUiState] = createSignal<'selection' | 'p2p' | 'walletconnect'>('selection')
+  const hasMavlet = !!props.p2pPayload
+  const hasWalletConnect = !!props.wcPayload
+  const [qrData, setQrData] = createSignal<string>('')
+
   onMount(() => {
     setUiState('selection')
     setQrData('')
   })
-
-  setHasMavlet(!!props.p2pPayload)
-  setHasWalletConnect(!!props.wcPayload)
 
   const buttonClickHandler = (state: 'p2p' | 'walletconnect') => {
     if (state === 'p2p' && !!props.p2pPayload) {
@@ -49,7 +46,7 @@ const PairOther: Component<PairOtherProps> = (props: PairOtherProps) => {
         <div>
           <span class="pair-other-info">Select QR Type</span>
           <br />
-          {hasMavlet() && (
+          {hasMavlet && (
             <button
               class="wallets-button"
               onClick={() => {
@@ -59,7 +56,7 @@ const PairOther: Component<PairOtherProps> = (props: PairOtherProps) => {
               Mavlet
             </button>
           )}
-          {hasWalletConnect() && (
+          {hasWalletConnect && (
             <button
               class="wallets-button"
               onClick={() => {
