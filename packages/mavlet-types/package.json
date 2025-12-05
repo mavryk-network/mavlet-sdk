@@ -1,6 +1,6 @@
 {
   "name": "@mavrykdynamics/mavlet-types",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "This package contains types that are used throughout the Mavlet SDK.",
   "author": "Mavryk Dynamics (https://mavryk.org)",
   "contributors": [

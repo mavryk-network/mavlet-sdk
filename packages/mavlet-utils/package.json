@@ -1,6 +1,6 @@
 {
   "name": "@mavrykdynamics/mavlet-utils",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "This package contains utility functions that are used throughout the mavlet-sdk",
   "author": "Mavryk Dynamics (https://mavryk.org)",
   "contributors": [
