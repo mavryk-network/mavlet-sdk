@@ -1,6 +1,6 @@
 {
   "name": "@mavrykdynamics/mavlet-blockchain-mavryk-sapling",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This package adds support for `mavryk-sapling`, the sapling integration on the Mavryk blockchain. It can be used in combination with the `@mavrykdynamics/mavlet-dapp` or `@mavrykdynamics/mavlet-wallet` packages.",
   "author": "Mavryk Dynamics (https://mavryk.org)",
   "contributors": [
@@ -38,6 +38,6 @@
   },
   "dependencies": {
     "@mavrykdynamics/mavlet-types": "^1.0.0",
-    "@mavrykdynamics/mavlet-ui": "^1.0.0"
+    "@mavrykdynamics/mavlet-ui": "^1.0.1"
   }
 }

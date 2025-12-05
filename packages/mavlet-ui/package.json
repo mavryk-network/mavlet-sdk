@@ -1,6 +1,6 @@
 {
   "name": "@mavrykdynamics/mavlet-ui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This package contains the UI part (alerts and toasts) of the Mavlet SDK.",
   "author": "Mavryk Dynamics (https://mavryk.org)",
   "contributors": [

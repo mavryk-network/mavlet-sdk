@@ -1,6 +1,6 @@
 {
   "name": "@mavrykdynamics/mavlet-dapp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Use this package on your dApp to instanciate a DAppClient object and communicate to wallets.",
   "author": "Mavryk Dynamics (https://mavryk.org)",
   "contributors": [
@@ -42,6 +42,6 @@
     "@mavrykdynamics/mavlet-transport-matrix": "^1.0.0",
     "@mavrykdynamics/mavlet-transport-postmessage": "^1.0.0",
     "@mavrykdynamics/mavlet-transport-walletconnect": "^1.0.0",
-    "@mavrykdynamics/mavlet-ui": "^1.0.0"
+    "@mavrykdynamics/mavlet-ui": "^1.0.1"
   }
 }
