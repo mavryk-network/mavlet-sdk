@@ -8,13 +8,14 @@ const codeToInsert = `if (web.isServer) {
     web.template = () => {
       return { cloneNode: () => {} }
     }
+    web.delegateEvents = () => {}
   }`
 
 // Split the file into an array of lines
 let fileLines = fileData.split('\n')
 
 // Insert the code into the desired line (line number starting from 0)
-const lineToInsert = 5 
+const lineToInsert = 5
 fileLines.splice(lineToInsert, 0, codeToInsert)
 
 // Join the modified lines into a string
