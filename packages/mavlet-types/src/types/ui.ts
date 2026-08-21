@@ -20,8 +20,6 @@ export interface WebApp extends AppBase {
     [NetworkType.BASENET]?: string
     [NetworkType.WEEKLYNET]?: string
     [NetworkType.DAILYNET]?: string
-    [NetworkType.ATLASNET]?: string
-    [NetworkType.BOREASNET]?: string
     [NetworkType.CUSTOM]?: string
   }
 }

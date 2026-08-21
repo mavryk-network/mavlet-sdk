@@ -9,7 +9,7 @@ import { DAppClient } from './dapp-client/DAppClient'
 import { DAppClientOptions } from './dapp-client/DAppClientOptions'
 import { MavletEvent, MavletEventHandler, defaultEventCallbacks } from './events'
 import { BlockExplorer } from './utils/block-explorer'
-import { MvktBlockExplorer } from './utils/mvkt-blockexplorer'
+import { NexusBlockExplorer } from './utils/nexus-blockexplorer'
 import { getDAppClientInstance } from './utils/get-instance'
 
 export { DAppClient, DAppClientOptions, getDAppClientInstance }
@@ -18,4 +18,6 @@ export { DAppClient, DAppClientOptions, getDAppClientInstance }
 export { MavletEvent, MavletEventHandler, defaultEventCallbacks }
 
 // BlockExplorer
-export { BlockExplorer, MvktBlockExplorer, MvktBlockExplorer as MavblockBlockExplorer }
+export { BlockExplorer, NexusBlockExplorer }
+/** @deprecated Use `NexusBlockExplorer` instead */
+export { NexusBlockExplorer as MvktBlockExplorer, NexusBlockExplorer as MavblockBlockExplorer }

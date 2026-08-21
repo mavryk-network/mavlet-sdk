@@ -104,7 +104,7 @@ import {
 } from '@mavrykdynamics/mavlet-utils'
 import { messageEvents } from '../mavlet-message-events'
 import { BlockExplorer } from '../utils/block-explorer'
-import { MvktBlockExplorer } from '../utils/mvkt-blockexplorer'
+import { NexusBlockExplorer } from '../utils/nexus-blockexplorer'
 
 import { DAppClientOptions } from './DAppClientOptions'
 import { MavletEventHandler } from '@mavrykdynamics/mavlet-dapp'
@@ -237,7 +237,7 @@ export class DAppClient extends Client {
     this.featuredWallets = config.featuredWallets
 
     this.events = new MavletEventHandler(config.eventHandlers, config.disableDefaultEvents ?? false)
-    this.blockExplorer = config.blockExplorer ?? new MvktBlockExplorer()
+    this.blockExplorer = config.blockExplorer ?? new NexusBlockExplorer()
     this.network = config.network ?? { type: config.preferredNetwork ?? NetworkType.MAINNET }
     setColorMode(config.colorMode ?? ColorMode.LIGHT)
 
