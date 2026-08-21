@@ -1,6 +1,6 @@
 {
   "name": "@mavrykdynamics/mavlet-core",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "This package contains internal methods that are used by both the dApp and wallet client.",
   "author": "Mavryk Dynamics (https://mavryk.org)",
   "contributors": [
@@ -37,7 +37,7 @@
     "url": "https://github.com/mavryk-network/mavlet-sdk/issues"
   },
   "dependencies": {
-    "@mavrykdynamics/mavlet-types": "^1.0.2",
+    "@mavrykdynamics/mavlet-types": "1.1.0",
     "@mavrykdynamics/mavlet-utils": "^1.0.2",
     "@stablelib/ed25519": "^1.0.3",
     "@stablelib/nacl": "^1.0.4",
