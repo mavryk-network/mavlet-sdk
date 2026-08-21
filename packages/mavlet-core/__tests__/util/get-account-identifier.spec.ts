@@ -19,13 +19,13 @@ describe(`AccountIdentifier`, () => {
       expect(accountIdentifier).to.deep.equal('288mYBP4kGn8FW4SbMBt')
     })
 
-    it(`should return the account identifier for an address on atlasnet`, async () => {
+    it(`should return the account identifier for an address on basenet`, async () => {
       const address: string = 'mv1RUZ6mQpNM3dSC95QvkhJHuuQywGJfQRmB'
-      const network: Network = { type: NetworkType.ATLASNET }
+      const network: Network = { type: NetworkType.BASENET }
 
       const accountIdentifier: string = await getAccountIdentifier(address, network)
 
-      expect(accountIdentifier).to.deep.equal('vv8pzoTcUQtL4RVFtaL')
+      expect(accountIdentifier).to.deep.equal('L5n425sUqriekz2Zy18')
     })
 
     it(`should return the account identifier for an address on custom net`, async () => {
