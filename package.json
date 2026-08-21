@@ -63,9 +63,9 @@
     "Papers AG <contact@papers.ch> (https://papers.ch)"
   ],
   "dependencies": {
-    "@mavrykdynamics/mavlet-blockchain-substrate": "file:packages/mavlet-blockchain-substrate",
     "@mavrykdynamics/mavlet-blockchain-mavryk": "file:packages/mavlet-blockchain-mavryk",
     "@mavrykdynamics/mavlet-blockchain-mavryk-sapling": "file:packages/mavlet-blockchain-mavryk-sapling",
+    "@mavrykdynamics/mavlet-blockchain-substrate": "file:packages/mavlet-blockchain-substrate",
     "@mavrykdynamics/mavlet-core": "file:packages/mavlet-core",
     "@mavrykdynamics/mavlet-dapp": "file:packages/mavlet-dapp",
     "@mavrykdynamics/mavlet-transport-matrix": "file:packages/mavlet-transport-matrix",
@@ -110,7 +110,7 @@
     "mocha": "10.2.0",
     "nyc": "15.1.0",
     "prettier": "3.0.3",
-    "pretty-quick": "3.1.3",
+    "pretty-quick": "^4.2.2",
     "puppeteer": "21.2.1",
     "puppeteer-mass-screenshots": "1.0.15",
     "resize-img": "2.0.0",
