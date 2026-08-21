@@ -149,10 +149,5 @@
     ],
     "sourceMap": true,
     "instrument": true
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run check-version && pretty-quick --staged"
-    }
   }
 }
